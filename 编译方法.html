@@ -1,0 +1,1494 @@
+<!DOCTYPE html><html><head>
+      <title>&#x7F16;&#x8BD1;&#x65B9;&#x6CD5;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.7.0/flowchart.min.js"></script>
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="%E6%80%BB%E8%BF%87%E7%A8%8B">&#x603B;&#x8FC7;&#x7A0B;</h1>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: procedure Pages: 1 -->
+<svg width="529pt" height="610pt" viewBox="0.00 0.00 529.00 610.40" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 606.4)">
+<title>procedure</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-606.4 525,-606.4 525,4 -4,4"/>
+<!-- Error handler\n错误处理器 -->
+<g id="node1" class="node">
+<title>Error handler\n&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5668;</title>
+<polygon fill="none" stroke="#000000" points="121.561,-41.4019 30.439,-41.4019 30.439,-.1981 121.561,-.1981 121.561,-41.4019"/>
+<text text-anchor="middle" x="76" y="-25" font-family="Times,serif" font-size="14.00" fill="#000000">Error handler</text>
+<text text-anchor="middle" x="76" y="-8.2" font-family="Times,serif" font-size="14.00" fill="#000000">&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5668;</text>
+</g>
+<!-- Symbol Table\n符号表 -->
+<g id="node2" class="node">
+<title>Symbol Table\n&#x7B26;&#x53F7;&#x8868;</title>
+<polygon fill="none" stroke="#000000" points="492.4362,-41.4019 397.5638,-41.4019 397.5638,-.1981 492.4362,-.1981 492.4362,-41.4019"/>
+<text text-anchor="middle" x="445" y="-25" font-family="Times,serif" font-size="14.00" fill="#000000">Symbol Table</text>
+<text text-anchor="middle" x="445" y="-8.2" font-family="Times,serif" font-size="14.00" fill="#000000">&#x7B26;&#x53F7;&#x8868;</text>
+</g>
+<!--   -->
+<g id="node3" class="node">
+<title> </title>
+<text text-anchor="middle" x="155" y="-580.2" font-family="Times,serif" font-size="14.00" fill="#000000"> </text>
+</g>
+<!-- Scanner\n扫描器 -->
+<g id="node5" class="node">
+<title>Scanner\n&#x626B;&#x63CF;&#x5668;</title>
+<polygon fill="none" stroke="#000000" points="185.5871,-513.4019 124.4129,-513.4019 124.4129,-472.1981 185.5871,-472.1981 185.5871,-513.4019"/>
+<text text-anchor="middle" x="155" y="-497" font-family="Times,serif" font-size="14.00" fill="#000000">Scanner</text>
+<text text-anchor="middle" x="155" y="-480.2" font-family="Times,serif" font-size="14.00" fill="#000000">&#x626B;&#x63CF;&#x5668;</text>
+</g>
+<!--  &#45;&gt;Scanner\n扫描器 -->
+<g id="edge1" class="edge">
+<title> -&gt;Scanner\n&#x626B;&#x63CF;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M155,-566.3028C155,-554.1708 155,-537.8846 155,-523.726"/>
+<polygon fill="#000000" stroke="#000000" points="158.5001,-523.4174 155,-513.4175 151.5001,-523.4175 158.5001,-523.4174"/>
+<text text-anchor="middle" x="189.4008" y="-535.8" font-family="Times,serif" font-size="14.00" fill="#000000">Source code</text>
+</g>
+<!--  &#160; -->
+<g id="node4" class="node">
+<title> &#xA0;</title>
+<text text-anchor="middle" x="193" y="-16.6" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;</text>
+</g>
+<!-- Scanner\n扫描器&#45;&gt;Error handler\n错误处理器 -->
+<g id="edge7" class="edge">
+<title>Scanner\n&#x626B;&#x63CF;&#x5668;-&gt;Error handler\n&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M124.377,-488.215C79.2052,-479.5221 0,-456.0589 0,-398.4 0,-398.4 0,-398.4 0,-115.2 0,-84.6917 24.382,-58.4586 45.5258,-41.4452"/>
+</g>
+<!-- Scanner\n扫描器&#45;&gt;Symbol Table\n符号表 -->
+<g id="edge10" class="edge">
+<title>Scanner\n&#x626B;&#x63CF;&#x5668;-&gt;Symbol Table\n&#x7B26;&#x53F7;&#x8868;</title>
+<path fill="none" stroke="#000000" d="M185.5754,-491.4592C273.5398,-486.7767 521,-467.4663 521,-398.4 521,-398.4 521,-398.4 521,-115.2 521,-84.6917 496.618,-58.4586 475.4742,-41.4452"/>
+</g>
+<!-- Parser\n分析器 -->
+<g id="node6" class="node">
+<title>Parser\n&#x5206;&#x6790;&#x5668;</title>
+<polygon fill="none" stroke="#000000" points="182,-419.0019 128,-419.0019 128,-377.7981 182,-377.7981 182,-419.0019"/>
+<text text-anchor="middle" x="155" y="-402.6" font-family="Times,serif" font-size="14.00" fill="#000000">Parser</text>
+<text text-anchor="middle" x="155" y="-385.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#x5206;&#x6790;&#x5668;</text>
+</g>
+<!-- Scanner\n扫描器&#45;&gt;Parser\n分析器 -->
+<g id="edge2" class="edge">
+<title>Scanner\n&#x626B;&#x63CF;&#x5668;-&gt;Parser\n&#x5206;&#x6790;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M155,-471.8496C155,-459.3835 155,-443.3355 155,-429.4214"/>
+<polygon fill="#000000" stroke="#000000" points="158.5001,-429.2918 155,-419.2919 151.5001,-429.2919 158.5001,-429.2918"/>
+<text text-anchor="middle" x="175.6059" y="-441.4" font-family="Times,serif" font-size="14.00" fill="#000000">Tokens</text>
+</g>
+<!-- Parser\n分析器&#45;&gt;Error handler\n错误处理器 -->
+<g id="edge8" class="edge">
+<title>Parser\n&#x5206;&#x6790;&#x5668;-&gt;Error handler\n&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M127.8638,-389.9631C93.3008,-377.3284 38,-349.9354 38,-304 38,-304 38,-304 38,-115.2 38,-88.3463 51.3965,-60.1017 62.2811,-41.5849"/>
+</g>
+<!-- Parser\n分析器&#45;&gt;Symbol Table\n符号表 -->
+<g id="edge11" class="edge">
+<title>Parser\n&#x5206;&#x6790;&#x5668;-&gt;Symbol Table\n&#x7B26;&#x53F7;&#x8868;</title>
+<path fill="none" stroke="#000000" d="M182.1207,-396.4471C260.7053,-390.0513 483,-366.4409 483,-304 483,-304 483,-304 483,-115.2 483,-88.3463 469.6035,-60.1017 458.7189,-41.5849"/>
+</g>
+<!-- Semantic analyzer\n语义分析器 -->
+<g id="node7" class="node">
+<title>Semantic analyzer\n&#x8BED;&#x4E49;&#x5206;&#x6790;&#x5668;</title>
+<polygon fill="none" stroke="#000000" points="214.5078,-324.6019 95.4922,-324.6019 95.4922,-283.3981 214.5078,-283.3981 214.5078,-324.6019"/>
+<text text-anchor="middle" x="155" y="-308.2" font-family="Times,serif" font-size="14.00" fill="#000000">Semantic analyzer</text>
+<text text-anchor="middle" x="155" y="-291.4" font-family="Times,serif" font-size="14.00" fill="#000000">&#x8BED;&#x4E49;&#x5206;&#x6790;&#x5668;</text>
+</g>
+<!-- Parser\n分析器&#45;&gt;Semantic analyzer\n语义分析器 -->
+<g id="edge3" class="edge">
+<title>Parser\n&#x5206;&#x6790;&#x5668;-&gt;Semantic analyzer\n&#x8BED;&#x4E49;&#x5206;&#x6790;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M155,-377.4496C155,-364.9835 155,-348.9355 155,-335.0214"/>
+<polygon fill="#000000" stroke="#000000" points="158.5001,-334.8918 155,-324.8919 151.5001,-334.8919 158.5001,-334.8918"/>
+<text text-anchor="middle" x="211.763" y="-347" font-family="Times,serif" font-size="14.00" fill="#000000">Syntax Tree&#x8BED;&#x6CD5;&#x6811;</text>
+</g>
+<!-- Semantic analyzer\n语义分析器&#45;&gt;Error handler\n错误处理器 -->
+<g id="edge9" class="edge">
+<title>Semantic analyzer\n&#x8BED;&#x4E49;&#x5206;&#x6790;&#x5668;-&gt;Error handler\n&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M132.189,-283.1074C118.9119,-269.4886 103.2165,-250.5503 95,-230.4 68.5809,-165.6089 71.0553,-80.4646 73.9793,-41.6728"/>
+</g>
+<!-- Semantic analyzer\n语义分析器&#45;&gt;Symbol Table\n符号表 -->
+<g id="edge12" class="edge">
+<title>Semantic analyzer\n&#x8BED;&#x4E49;&#x5206;&#x6790;&#x5668;-&gt;Symbol Table\n&#x7B26;&#x53F7;&#x8868;</title>
+<path fill="none" stroke="#000000" d="M214.6516,-290.2837C275.9393,-273.0053 369.4542,-237.1954 421,-170.8 450.4345,-132.8859 450.1472,-73.0661 447.5216,-41.6508"/>
+</g>
+<!-- Code optimizer\n代码优化 -->
+<g id="node8" class="node">
+<title>Code optimizer\n&#x4EE3;&#x7801;&#x4F18;&#x5316;</title>
+<polygon fill="none" stroke="#000000" points="206.2038,-230.2019 103.7962,-230.2019 103.7962,-188.9981 206.2038,-188.9981 206.2038,-230.2019"/>
+<text text-anchor="middle" x="155" y="-213.8" font-family="Times,serif" font-size="14.00" fill="#000000">Code optimizer</text>
+<text text-anchor="middle" x="155" y="-197" font-family="Times,serif" font-size="14.00" fill="#000000">&#x4EE3;&#x7801;&#x4F18;&#x5316;</text>
+</g>
+<!-- Semantic analyzer\n语义分析器&#45;&gt;Code optimizer\n代码优化 -->
+<g id="edge4" class="edge">
+<title>Semantic analyzer\n&#x8BED;&#x4E49;&#x5206;&#x6790;&#x5668;-&gt;Code optimizer\n&#x4EE3;&#x7801;&#x4F18;&#x5316;</title>
+<path fill="none" stroke="#000000" d="M155,-283.0496C155,-270.5835 155,-254.5355 155,-240.6214"/>
+<polygon fill="#000000" stroke="#000000" points="158.5001,-240.4918 155,-230.4919 151.5001,-240.4919 158.5001,-240.4918"/>
+<text text-anchor="middle" x="205.3356" y="-252.6" font-family="Times,serif" font-size="14.00" fill="#000000">Intermediate code</text>
+</g>
+<!-- Code optimizer\n代码优化&#45;&gt;Error handler\n错误处理器 -->
+<g id="edge15" class="edge">
+<title>Code optimizer\n&#x4EE3;&#x7801;&#x4F18;&#x5316;-&gt;Error handler\n&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M146.2438,-188.6737C131.0182,-152.2865 99.8437,-77.7835 84.675,-41.5323"/>
+</g>
+<!-- Code optimizer\n代码优化&#45;&gt;Symbol Table\n符号表 -->
+<g id="edge13" class="edge">
+<title>Code optimizer\n&#x4EE3;&#x7801;&#x4F18;&#x5316;-&gt;Symbol Table\n&#x7B26;&#x53F7;&#x8868;</title>
+<path fill="none" stroke="#000000" d="M206.2446,-207.8532C269.4905,-204.6432 372.1113,-195.6575 400,-170.8 438.3011,-136.6619 415.3934,-108.4755 431,-59.6 432.8733,-53.7332 435.068,-47.4294 437.1567,-41.6444"/>
+</g>
+<!-- Code generator\n代码生成器 -->
+<g id="node9" class="node">
+<title>Code generator\n&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;</title>
+<polygon fill="none" stroke="#000000" points="243.9068,-135.8019 142.0932,-135.8019 142.0932,-94.5981 243.9068,-94.5981 243.9068,-135.8019"/>
+<text text-anchor="middle" x="193" y="-119.4" font-family="Times,serif" font-size="14.00" fill="#000000">Code generator</text>
+<text text-anchor="middle" x="193" y="-102.6" font-family="Times,serif" font-size="14.00" fill="#000000">&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;</text>
+</g>
+<!-- Code optimizer\n代码优化&#45;&gt;Code generator\n代码生成器 -->
+<g id="edge5" class="edge">
+<title>Code optimizer\n&#x4EE3;&#x7801;&#x4F18;&#x5316;-&gt;Code generator\n&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M147.3016,-188.9814C144.4981,-178.1396 143.0935,-164.8794 148.0728,-154 149.7616,-150.3101 151.9937,-146.8374 154.5621,-143.6024"/>
+<polygon fill="#000000" stroke="#000000" points="157.311,-145.7846 161.5211,-136.0621 152.1669,-141.037 157.311,-145.7846"/>
+<text text-anchor="middle" x="274.9636" y="-158.2" font-family="Times,serif" font-size="14.00" fill="#000000">Optimized intermediate code&#x4F18;&#x5316;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;</text>
+</g>
+<!-- Code generator\n代码生成器&#45;&gt;Error handler\n错误处理器 -->
+<g id="edge16" class="edge">
+<title>Code generator\n&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;-&gt;Error handler\n&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5668;</title>
+<path fill="none" stroke="#000000" d="M169.5463,-94.4815C157.3245,-83.8537 142.0357,-70.8189 128,-59.6 120.4332,-53.5518 112.082,-47.1884 104.3272,-41.4043"/>
+</g>
+<!-- Code generator\n代码生成器&#45;&gt;Symbol Table\n符号表 -->
+<g id="edge14" class="edge">
+<title>Code generator\n&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;-&gt;Symbol Table\n&#x7B26;&#x53F7;&#x8868;</title>
+<path fill="none" stroke="#000000" d="M243.996,-96.0968C288.8674,-79.2878 353.6922,-55.0042 397.4897,-38.5975"/>
+</g>
+<!-- Code generator\n代码生成器&#45;&gt; &#160; -->
+<g id="edge6" class="edge">
+<title>Code generator\n&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;-&gt; &#xA0;</title>
+<path fill="none" stroke="#000000" d="M193,-94.2496C193,-81.0044 193,-63.7155 193,-49.2389"/>
+<polygon fill="#000000" stroke="#000000" points="196.5001,-48.8303 193,-38.8303 189.5001,-48.8304 196.5001,-48.8303"/>
+<text text-anchor="middle" x="226.6231" y="-63.8" font-family="Times,serif" font-size="14.00" fill="#000000">Object code</text>
+</g>
+</g>
+</svg>
+</p><h2 class="mume-header" id="scanner">Scanner</h2>
+
+<ol>
+<li>keyword &#x5173;&#x952E;&#x8BCD; k</li>
+<li>identifier &#x6807;&#x8BC6;&#x7B26; i</li>
+<li>const &#x5E38;&#x91CF; c</li>
+<li>delimiter &#x754C;&#x7B26; p</li>
+</ol>
+<h2 class="mume-header" id="parser">Parser</h2>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: syntaxTree Pages: 1 -->
+<svg width="401pt" height="421pt" viewBox="0.00 0.00 400.72 420.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 416.8)">
+<title>syntaxTree</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-416.8 396.7151,-416.8 396.7151,4 -4,4"/>
+<!-- &lt;assignment&gt; -->
+<g id="node1" class="node">
+<title>&lt;assignment&gt;</title>
+<text text-anchor="middle" x="99" y="-390.6" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;assignment&gt;</text>
+</g>
+<!-- &lt;var&gt;\n变量 -->
+<g id="node2" class="node">
+<title>&lt;var&gt;\n&#x53D8;&#x91CF;</title>
+<text text-anchor="middle" x="27" y="-324.2" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;var&gt;</text>
+<text text-anchor="middle" x="27" y="-307.4" font-family="Times,serif" font-size="14.00" fill="#000000">&#x53D8;&#x91CF;</text>
+</g>
+<!-- &lt;assignment&gt;&#45;&#45;&lt;var&gt;\n变量 -->
+<g id="edge1" class="edge">
+<title>&lt;assignment&gt;--&lt;var&gt;\n&#x53D8;&#x91CF;</title>
+<path fill="none" stroke="#000000" d="M81.5708,-376.693C71.1662,-365.8838 57.9117,-352.1138 47.071,-340.8515"/>
+</g>
+<!-- = -->
+<g id="node4" class="node">
+<title>=</title>
+<text text-anchor="middle" x="99" y="-315.8" font-family="Times,serif" font-size="14.00" fill="#000000">=</text>
+</g>
+<!-- &lt;assignment&gt;&#45;&#45;= -->
+<g id="edge3" class="edge">
+<title>&lt;assignment&gt;--=</title>
+<path fill="none" stroke="#000000" d="M99,-376.693C99,-365.0191 99,-349.8916 99,-338.1995"/>
+</g>
+<!-- &lt;expression&gt;\n表达式 -->
+<g id="node5" class="node">
+<title>&lt;expression&gt;\n&#x8868;&#x8FBE;&#x5F0F;</title>
+<text text-anchor="middle" x="190" y="-324.2" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;expression&gt;</text>
+<text text-anchor="middle" x="190" y="-307.4" font-family="Times,serif" font-size="14.00" fill="#000000">&#x8868;&#x8FBE;&#x5F0F;</text>
+</g>
+<!-- &lt;assignment&gt;&#45;&#45;&lt;expression&gt;\n表达式 -->
+<g id="edge4" class="edge">
+<title>&lt;assignment&gt;--&lt;expression&gt;\n&#x8868;&#x8FBE;&#x5F0F;</title>
+<path fill="none" stroke="#000000" d="M121.0286,-376.693C134.1788,-365.8838 150.9311,-352.1138 164.6325,-340.8515"/>
+</g>
+<!-- b -->
+<g id="node3" class="node">
+<title>b</title>
+<text text-anchor="middle" x="27" y="-238.2" font-family="Times,serif" font-size="14.00" fill="#000000">b</text>
+</g>
+<!-- &lt;var&gt;\n变量&#45;&#45;b -->
+<g id="edge2" class="edge">
+<title>&lt;var&gt;\n&#x53D8;&#x91CF;--b</title>
+<path fill="none" stroke="#000000" d="M27,-299.2046C27,-287.1729 27,-272.1731 27,-260.6091"/>
+</g>
+<!-- &lt;term1&gt;\n项 -->
+<g id="node6" class="node">
+<title>&lt;term1&gt;\n&#x9879;</title>
+<text text-anchor="middle" x="109" y="-246.6" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;term1&gt;</text>
+<text text-anchor="middle" x="109" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#x9879;</text>
+</g>
+<!-- &lt;expression&gt;\n表达式&#45;&#45;&lt;term1&gt;\n项 -->
+<g id="edge5" class="edge">
+<title>&lt;expression&gt;\n&#x8868;&#x8FBE;&#x5F0F;--&lt;term1&gt;\n&#x9879;</title>
+<path fill="none" stroke="#000000" d="M168.2935,-299.2046C156.6718,-288.0708 142.3972,-274.3954 130.7664,-263.2528"/>
+</g>
+<!-- + -->
+<g id="node7" class="node">
+<title>+</title>
+<text text-anchor="middle" x="190" y="-238.2" font-family="Times,serif" font-size="14.00" fill="#000000">+</text>
+</g>
+<!-- &lt;expression&gt;\n表达式&#45;&#45;+ -->
+<g id="edge6" class="edge">
+<title>&lt;expression&gt;\n&#x8868;&#x8FBE;&#x5F0F;--+</title>
+<path fill="none" stroke="#000000" d="M190,-299.2046C190,-287.1729 190,-272.1731 190,-260.6091"/>
+</g>
+<!-- &lt;term2&gt;\n -->
+<g id="node8" class="node">
+<title>&lt;term2&gt;\n</title>
+<text text-anchor="middle" x="273" y="-238.2" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;term2&gt;</text>
+</g>
+<!-- &lt;expression&gt;\n表达式&#45;&#45;&lt;term2&gt;\n -->
+<g id="edge7" class="edge">
+<title>&lt;expression&gt;\n&#x8868;&#x8FBE;&#x5F0F;--&lt;term2&gt;\n</title>
+<path fill="none" stroke="#000000" d="M212.2425,-299.2046C225.1115,-287.1729 241.155,-272.1731 253.5238,-260.6091"/>
+</g>
+<!-- &lt;factor1&gt;\n因式 -->
+<g id="node9" class="node">
+<title>&lt;factor1&gt;\n&#x56E0;&#x5F0F;</title>
+<text text-anchor="middle" x="106" y="-169" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;factor1&gt;</text>
+<text text-anchor="middle" x="106" y="-152.2" font-family="Times,serif" font-size="14.00" fill="#000000">&#x56E0;&#x5F0F;</text>
+</g>
+<!-- &lt;term1&gt;\n项&#45;&#45;&lt;factor1&gt;\n因式 -->
+<g id="edge8" class="edge">
+<title>&lt;term1&gt;\n&#x9879;--&lt;factor1&gt;\n&#x56E0;&#x5F0F;</title>
+<path fill="none" stroke="#000000" d="M108.1961,-221.6046C107.7656,-210.4708 107.2369,-196.7954 106.8062,-185.6528"/>
+</g>
+<!-- &lt;factor2&gt; -->
+<g id="node12" class="node">
+<title>&lt;factor2&gt;</title>
+<text text-anchor="middle" x="195" y="-160.6" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;factor2&gt;</text>
+</g>
+<!-- &lt;term2&gt;\n&#45;&#45;&lt;factor2&gt; -->
+<g id="edge11" class="edge">
+<title>&lt;term2&gt;\n--&lt;factor2&gt;</title>
+<path fill="none" stroke="#000000" d="M254.5151,-224.0099C242.0813,-211.6398 225.7583,-195.4005 213.3522,-183.0581"/>
+</g>
+<!-- * -->
+<g id="node15" class="node">
+<title>*</title>
+<text text-anchor="middle" x="276" y="-160.6" font-family="Times,serif" font-size="14.00" fill="#000000">*</text>
+</g>
+<!-- &lt;term2&gt;\n&#45;&#45;* -->
+<g id="edge14" class="edge">
+<title>&lt;term2&gt;\n--*</title>
+<path fill="none" stroke="#000000" d="M273.711,-224.0099C274.1892,-211.6398 274.817,-195.4005 275.2941,-183.0581"/>
+</g>
+<!-- &lt;factor3&gt; -->
+<g id="node16" class="node">
+<title>&lt;factor3&gt;</title>
+<text text-anchor="middle" x="357" y="-160.6" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;factor3&gt;</text>
+</g>
+<!-- &lt;term2&gt;\n&#45;&#45;&lt;factor3&gt; -->
+<g id="edge15" class="edge">
+<title>&lt;term2&gt;\n--&lt;factor3&gt;</title>
+<path fill="none" stroke="#000000" d="M292.9068,-224.0099C306.2971,-211.6398 323.8757,-195.4005 337.2361,-183.0581"/>
+</g>
+<!-- &lt;var&gt; -->
+<g id="node10" class="node">
+<title>&lt;var&gt;</title>
+<text text-anchor="middle" x="106" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;var&gt;</text>
+</g>
+<!-- &lt;factor1&gt;\n因式&#45;&#45;&lt;var&gt; -->
+<g id="edge9" class="edge">
+<title>&lt;factor1&gt;\n&#x56E0;&#x5F0F;--&lt;var&gt;</title>
+<path fill="none" stroke="#000000" d="M106,-143.964C106,-132.7248 106,-118.9845 106,-108.1816"/>
+</g>
+<!-- a -->
+<g id="node11" class="node">
+<title>a</title>
+<text text-anchor="middle" x="106" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">a</text>
+</g>
+<!-- &lt;var&gt;&#45;&#45;a -->
+<g id="edge10" class="edge">
+<title>&lt;var&gt;--a</title>
+<path fill="none" stroke="#000000" d="M106,-71.8314C106,-61 106,-47.2876 106,-36.4133"/>
+</g>
+<!-- &lt;const1&gt; -->
+<g id="node13" class="node">
+<title>&lt;const1&gt;</title>
+<text text-anchor="middle" x="195" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;const1&gt;</text>
+</g>
+<!-- &lt;factor2&gt;&#45;&#45;&lt;const1&gt; -->
+<g id="edge12" class="edge">
+<title>&lt;factor2&gt;--&lt;const1&gt;</title>
+<path fill="none" stroke="#000000" d="M195,-146.693C195,-135.0191 195,-119.8916 195,-108.1995"/>
+</g>
+<!-- 2 -->
+<g id="node14" class="node">
+<title>2</title>
+<text text-anchor="middle" x="195" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">2</text>
+</g>
+<!-- &lt;const1&gt;&#45;&#45;2 -->
+<g id="edge13" class="edge">
+<title>&lt;const1&gt;--2</title>
+<path fill="none" stroke="#000000" d="M195,-71.8314C195,-61 195,-47.2876 195,-36.4133"/>
+</g>
+<!-- &lt;const2&gt; -->
+<g id="node17" class="node">
+<title>&lt;const2&gt;</title>
+<text text-anchor="middle" x="357" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">&lt;const2&gt;</text>
+</g>
+<!-- &lt;factor3&gt;&#45;&#45;&lt;const2&gt; -->
+<g id="edge16" class="edge">
+<title>&lt;factor3&gt;--&lt;const2&gt;</title>
+<path fill="none" stroke="#000000" d="M357,-146.693C357,-135.0191 357,-119.8916 357,-108.1995"/>
+</g>
+<!-- 5 -->
+<g id="node18" class="node">
+<title>5</title>
+<text text-anchor="middle" x="357" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">5</text>
+</g>
+<!-- &lt;const2&gt;&#45;&#45;5 -->
+<g id="edge17" class="edge">
+<title>&lt;const2&gt;--5</title>
+<path fill="none" stroke="#000000" d="M357,-71.8314C357,-61 357,-47.2876 357,-36.4133"/>
+</g>
+</g>
+</svg>
+</p><h1 class="mume-header" id="chapter-4-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90">Chapter 4 &#x8BCD;&#x6CD5;&#x5206;&#x6790;</h1>
+
+<p>&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x4E5F;&#x53EB;&#x626B;&#x63CF;&#x5668;<br>
+&#x4E24;&#x4E2A;&#x4EFB;&#x52A1;</p>
+<ol>
+<li>&#x8BC6;&#x522B;&#x5355;&#x8BCD;&#x2014;&#x2014;&#x628A;&#x5355;&#x8BCD;&#x4ECE;&#x6E90;&#x7A0B;&#x5E8F;&#x4E2D;&#x5206;&#x79BB;&#x5F00;</li>
+<li>&#x7FFB;&#x8BD1;&#x5355;&#x8BCD;&#x2014;&#x2014;&#x5427;&#x8BC6;&#x522B;&#x51FA;&#x7684;&#x5355;&#x8BCD;&#x7FFB;&#x8BD1;&#x6210;&#x76F8;&#x5E94;&#x7684;token</li>
+</ol>
+<h2 class="mume-header" id="%E8%AF%86%E5%88%AB%E5%8D%95%E8%AF%8D">&#x8BC6;&#x522B;&#x5355;&#x8BCD;</h2>
+
+<h3 class="mume-header" id="%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB">&#x5355;&#x8BCD;&#x5206;&#x7C7B;</h3>
+
+<p>&#x6839;&#x636E;&#x8BED;&#x6CD5;&#x529F;&#x80FD;&#x5206;&#x7C7B;</p>
+<ul>
+<li>&#x6807;&#x8BC6;&#x7B26;Identifier&#x2014;&#x2014;&#x53D8;&#x91CF;&#x540D;&#x3001;&#x51FD;&#x6570;&#x540D;&#x3001;&#x7C7B;&#x540D;&#x7B49;</li>
+<li>&#x5173;&#x952E;&#x5B57;Keywords&#x2014;&#x2014;&#x7531;&#x7CFB;&#x7EDF;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#xFF0C;&#x7528;&#x6765;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x8BED;&#x6CD5;&#x5355;&#x5143;</li>
+<li>&#x5E38;&#x91CF;Constant&#x2014;&#x2014;&#x4EE5;&#x5B83;&#x81EA;&#x8EAB;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x5728;</li>
+<li>&#x754C;&#x7B26;Delimiter&#x2014;&#x2014;
+<ul>
+<li>&#x5355;&#x5B57;&#x2014;&#x2014;+ -</li>
+<li>&#x53CC;&#x5B57;&#x2014;&#x2014;&lt;&gt; ==</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="%E5%8D%95%E8%AF%8D%E8%AF%86%E5%88%AB">&#x5355;&#x8BCD;&#x8BC6;&#x522B;</h3>
+
+<ol>
+<li>&#x4EE5;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#x2014;&#x2014;&#x5173;&#x952E;&#x5B57;&#x6216;&#x6807;&#x8BC6;&#x7B26;</li>
+<li>&#x4EE5;&#x6570;&#x5B57;&#x5F00;&#x5934;&#x2014;&#x2014;&#x6570;&#x5B57;&#x578B;&#x5E38;&#x91CF;</li>
+<li>&#x4EE5;&#x2018;&#x6216;&#x201C;&#x5F00;&#x5934;&#x2014;&#x2014;&#x5B57;&#x7B26;&#x578B;&#x5E38;&#x91CF;&#x6216;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;</li>
+<li>&#x5176;&#x4ED6;&#x7684;&#x2014;&#x2014;&#x4EE5;&#x5B83;&#x81EA;&#x8EAB;&#x5F62;&#x5F0F;&#x663E;&#x793A;</li>
+</ol>
+<p><strong>&#x5982;&#x4F55;&#x533A;&#x5206;&#x5173;&#x952E;&#x5B57;&#x548C;&#x6807;&#x8BC6;&#x7B26;&#xFF1F;</strong><br>
+&#x5927;&#x591A;&#x6570;&#x8BED;&#x8A00;&#x7684;&#x5173;&#x952E;&#x5B57;&#x662F;<strong>&#x4FDD;&#x7559;&#x7684;</strong>&#xFF0C;&#x6807;&#x8BC6;&#x7B26;&#x4E0D;&#x80FD;&#x548C;&#x5173;&#x952E;&#x5B57;&#x540C;&#x540D;<br>
+&#x53BB;&#x5173;&#x952E;&#x5B57;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#xFF0C;&#x627E;&#x5230;&#x4E86;&#x5C31;&#x662F;&#x5173;&#x952E;&#x5B57;</p>
+<h3 class="mume-header" id="token">Token</h3>
+
+<p>&#x5355;&#x8BCD;&#x957F;&#x5EA6;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x683C;&#x5F0F;&#x4E0D;&#x4E00;&#x6837;<br>
+token&#x80FD;&#x5B9E;&#x73B0;</p>
+<ol>
+<li>&#x957F;&#x5EA6;&#x4E00;&#x81F4;</li>
+<li>&#x8BED;&#x6CD5;&#x4FE1;&#x606F;&#x548C;&#x8BED;&#x4E49;&#x4FE1;&#x606F;&#x5206;&#x79BB;&#x5F00;<br>
+token&#x4E8C;&#x5143;&#x7EC4; type|value<br>
+type&#x5B58;&#x50A8;&#x8BED;&#x6CD5;&#x4FE1;&#x606F;&#xFF0C;&#x6BD4;&#x5982;&#x5355;&#x8BCD;&#x7C7B;&#x578B;<br>
+value&#x5B58;&#x50A8;&#x8BED;&#x4E49;&#x4FE1;&#x606F;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x7EC4;&#x7EF4;&#x6570;&#x3001;&#x4E0A;&#x754C;&#x3001;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+</ol>
+<p>&#x7528;&#x6307;&#x9488;&#x8BBE;&#x8BA1;token<br>
+&#x56DB;&#x4E2A;&#x6307;&#x9488;&#x5206;&#x522B;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x8868;</p>
+<h2 class="mume-header" id="%E8%AE%BE%E8%AE%A1%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8">&#x8BBE;&#x8BA1;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;</h2>
+
+<h3 class="mume-header" id="%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B">&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x7C7B;&#x578B;</h3>
+
+<ol>
+<li>&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x626B;&#x63CF;&#x5668;</li>
+</ol>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: s1 Pages: 1 -->
+<svg width="160pt" height="188pt" viewBox="0.00 0.00 159.85 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>s1</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 155.8488,-184 155.8488,4 -4,4"/>
+<!-- source_program -->
+<g id="node1" class="node">
+<title>source_program</title>
+<ellipse fill="none" stroke="#000000" cx="75.9244" cy="-162" rx="73.5599" ry="18"/>
+<text text-anchor="middle" x="75.9244" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">source_program</text>
+</g>
+<!-- Scanner -->
+<g id="node2" class="node">
+<title>Scanner</title>
+<ellipse fill="none" stroke="#000000" cx="75.9244" cy="-90" rx="42.2738" ry="18"/>
+<text text-anchor="middle" x="75.9244" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">Scanner</text>
+</g>
+<!-- source_program&#45;&gt;Scanner -->
+<g id="edge1" class="edge">
+<title>source_program-&gt;Scanner</title>
+<path fill="none" stroke="#000000" d="M75.9244,-143.8314C75.9244,-136.131 75.9244,-126.9743 75.9244,-118.4166"/>
+<polygon fill="#000000" stroke="#000000" points="79.4245,-118.4132 75.9244,-108.4133 72.4245,-118.4133 79.4245,-118.4132"/>
+</g>
+<!-- Token_sequence -->
+<g id="node3" class="node">
+<title>Token_sequence</title>
+<ellipse fill="none" stroke="#000000" cx="75.9244" cy="-18" rx="75.8489" ry="18"/>
+<text text-anchor="middle" x="75.9244" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Token_sequence</text>
+</g>
+<!-- Scanner&#45;&gt;Token_sequence -->
+<g id="edge2" class="edge">
+<title>Scanner-&gt;Token_sequence</title>
+<path fill="none" stroke="#000000" d="M75.9244,-71.8314C75.9244,-64.131 75.9244,-54.9743 75.9244,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="79.4245,-46.4132 75.9244,-36.4133 72.4245,-46.4133 79.4245,-46.4132"/>
+</g>
+</g>
+</svg>
+</p><ol start="2">
+<li>&#x5C06;&#x626B;&#x63CF;&#x5668;&#x4F5C;&#x4E3A;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x5668;&#x7684;&#x5B50;&#x7A0B;&#x5E8F;&#x6765;&#x8C03;&#x7528;</li>
+</ol>
+<p engine="twopi"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: s1 Pages: 1 -->
+<svg width="156pt" height="188pt" viewBox="0.00 0.00 155.56 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>s1</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 151.5573,-184 151.5573,4 -4,4"/>
+<!-- syntax_analyzer -->
+<g id="node1" class="node">
+<title>syntax_analyzer</title>
+<ellipse fill="none" stroke="#000000" cx="73.7786" cy="-162" rx="73.5579" ry="18"/>
+<text text-anchor="middle" x="73.7786" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">syntax_analyzer</text>
+</g>
+<!-- scanner -->
+<g id="node2" class="node">
+<title>scanner</title>
+<ellipse fill="none" stroke="#000000" cx="73.7786" cy="-90" rx="40.548" ry="18"/>
+<text text-anchor="middle" x="73.7786" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">scanner</text>
+</g>
+<!-- syntax_analyzer&#45;&gt;scanner -->
+<g id="edge1" class="edge">
+<title>syntax_analyzer-&gt;scanner</title>
+<path fill="none" stroke="#000000" d="M79.731,-143.8314C80.493,-136.0125 80.709,-126.6923 80.3791,-118.0221"/>
+<polygon fill="#000000" stroke="#000000" points="83.8628,-117.6587 79.7059,-107.9134 76.8782,-118.1239 83.8628,-117.6587"/>
+</g>
+<!-- scanner&#45;&gt;syntax_analyzer -->
+<g id="edge2" class="edge">
+<title>scanner-&gt;syntax_analyzer</title>
+<path fill="none" stroke="#000000" d="M67.8263,-108.1686C67.0758,-115.869 66.8549,-125.0257 67.1636,-133.5834"/>
+<polygon fill="#000000" stroke="#000000" points="63.6721,-133.8303 67.8026,-143.5867 70.6579,-133.3839 63.6721,-133.8303"/>
+</g>
+<!-- source -->
+<g id="node3" class="node">
+<title>source</title>
+<ellipse fill="none" stroke="#000000" cx="73.7786" cy="-18" rx="36.4761" ry="18"/>
+<text text-anchor="middle" x="73.7786" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">source</text>
+</g>
+<!-- source&#45;&gt;scanner -->
+<g id="edge3" class="edge">
+<title>source-&gt;scanner</title>
+<path fill="none" stroke="#000000" d="M73.7786,-36.1686C73.7786,-43.869 73.7786,-53.0257 73.7786,-61.5834"/>
+<polygon fill="#000000" stroke="#000000" points="70.2785,-61.5868 73.7786,-71.5867 77.2785,-61.5867 70.2785,-61.5868"/>
+</g>
+</g>
+</svg>
+</p><p>&#x901A;&#x5E38;&#x662F;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;</p>
+<p>&#x626B;&#x63CF;&#x5668;&#x5185;&#x90E8;&#x901A;&#x5E38;&#x662F;&#x4E00;&#x6837;&#x7684;</p>
+<p>&#x8BC6;&#x522B;&#x5668;&#x2014;&#x2014;&#x4E00;&#x4E2A;&#x8BC6;&#x522B;&#x5355;&#x8BCD;&#x7684;&#x6709;&#x9650;&#x81EA;&#x52A8;&#x673A;</p>
+<p>&#x7FFB;&#x8BD1;&#x5668;&#x2014;&#x2014;&#x5C06;&#x5355;&#x8BCD;&#x7FFB;&#x8BD1;&#x6210;token</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: s1 Pages: 1 -->
+<svg width="160pt" height="188pt" viewBox="0.00 0.00 159.85 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>s1</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 155.8488,-184 155.8488,4 -4,4"/>
+<!-- source_program -->
+<g id="node1" class="node">
+<title>source_program</title>
+<ellipse fill="none" stroke="#000000" cx="75.9244" cy="-162" rx="73.5599" ry="18"/>
+<text text-anchor="middle" x="75.9244" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">source_program</text>
+</g>
+<!-- Scanner -->
+<g id="node2" class="node">
+<title>Scanner</title>
+<ellipse fill="none" stroke="#000000" cx="75.9244" cy="-90" rx="42.2738" ry="18"/>
+<text text-anchor="middle" x="75.9244" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">Scanner</text>
+</g>
+<!-- source_program&#45;&gt;Scanner -->
+<g id="edge1" class="edge">
+<title>source_program-&gt;Scanner</title>
+<path fill="none" stroke="#000000" d="M75.9244,-143.8314C75.9244,-136.131 75.9244,-126.9743 75.9244,-118.4166"/>
+<polygon fill="#000000" stroke="#000000" points="79.4245,-118.4132 75.9244,-108.4133 72.4245,-118.4133 79.4245,-118.4132"/>
+</g>
+<!-- Token_sequence -->
+<g id="node3" class="node">
+<title>Token_sequence</title>
+<ellipse fill="none" stroke="#000000" cx="75.9244" cy="-18" rx="75.8489" ry="18"/>
+<text text-anchor="middle" x="75.9244" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Token_sequence</text>
+</g>
+<!-- Scanner&#45;&gt;Token_sequence -->
+<g id="edge2" class="edge">
+<title>Scanner-&gt;Token_sequence</title>
+<path fill="none" stroke="#000000" d="M75.9244,-71.8314C75.9244,-64.131 75.9244,-54.9743 75.9244,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="79.4245,-46.4132 75.9244,-36.4133 72.4245,-46.4133 79.4245,-46.4132"/>
+</g>
+</g>
+</svg>
+</p><ol>
+<li>&#x8BC6;&#x522B;&#x5668;&#x2014;&#x2014;&#x8FD4;&#x56DE;&#x5DF2;&#x8BC6;&#x522B;&#x7684;&#x5355;&#x8BCD;</li>
+<li>&#x5E38;&#x6570;&#x5904;&#x7406;&#x2014;&#x2014;&#x628A;&#x5B57;&#x7B26;&#x578B;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x503C;&#x578B;</li>
+</ol>
+<h2 class="mume-header" id="%E7%AE%97%E6%9C%AF%E5%B8%B8%E6%95%B0%E5%A4%84%E7%90%86%E6%9C%BA%E7%9A%84%E8%AE%BE%E8%AE%A1">&#x7B97;&#x672F;&#x5E38;&#x6570;&#x5904;&#x7406;&#x673A;&#x7684;&#x8BBE;&#x8BA1;</h2>
+
+<p>&#x5E26;&#x6709;&#x7FFB;&#x8BD1;&#x529F;&#x80FD;&#x7684;&#x81EA;&#x52A8;&#x673A;&#x79F0;&#x4E3A;&#x5904;&#x7406;&#x673A;&#xFF0C;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x90E8;&#x5206;</p>
+<ol>
+<li>&#x8BC6;&#x522B;&#x5668;&#xFF08;&#x6709;&#x9650;&#x81EA;&#x52A8;&#x673A;&#xFF09;&#xFF0C;&#x4E3B;&#x7A0B;&#x5E8F;</li>
+<li>&#x7FFB;&#x8BD1;&#x673A;&#xFF0C;&#x5B50;&#x7A0B;&#x5E8F;&#xFF0C;&#x63D2;&#x5165;&#x5230;&#x6709;&#x9650;&#x81EA;&#x52A8;&#x673A;&#x7684;&#x7ED3;&#x70B9;&#x4E4B;&#x4E2D;</li>
+</ol>
+<p><strong>&#x529F;&#x80FD;&#x662F;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x578B;&#x53D8;&#x6362;&#x6210;&#x6570;&#x503C;&#x578B;</strong></p>
+<h3 class="mume-header" id="%E8%AF%86%E5%88%AB%E5%99%A8">&#x8BC6;&#x522B;&#x5668;</h3>
+
+<p>&#x7B97;&#x672F;&#x5E38;&#x91CF;&#x7684;&#x57FA;&#x672C;&#x5F62;&#x5F0F;<br>
+ddddd...d e(+|-)ddd...d</p>
+<h3 class="mume-header" id="%E7%BF%BB%E8%AF%91%E5%99%A8">&#x7FFB;&#x8BD1;&#x5668;</h3>
+
+<ol>
+<li>&#x7B97;&#x6CD5;&#xFF1A;&#x4E0B;&#x5217;&#x53C2;&#x6570;<br>
+&#x521D;&#x59CB;&#x503C;&#xFF1A;n=p=m=t=0;e=1<br>
+n:&#x62FC;&#x5C3E;&#x6570;&#x503C;&#x53D8;&#x91CF;<br>
+&#x6BCF;&#x5F53;&#x8BFB;&#x5165;&#x5C3E;&#x6570;&#x6570;&#x5B57;d&#x65F6;&#xFF0C;n=10<em>n+val(d);<br>
+p:&#x62FC;&#x6307;&#x6570;&#x503C;&#x53D8;&#x91CF;<br>
+&#x6BCF;&#x5F53;&#x8BFB;&#x5165;&#x6307;&#x6570;&#x6570;&#x5B57;p&#x65F6;&#xFF0C;p=10</em>p+val(d);<br>
+m:&#x5C0F;&#x6570;&#x4F4D;&#x6570;&#x53D8;&#x91CF;<br>
+&#x8BFB;&#x5230;&#x5C0F;&#x6570;&#x70B9;&#x540E;&#xFF0C;&#x6BCF;&#x5F53;&#x8BFB;&#x5165;&#x5C0F;&#x6570;&#x6570;&#x5B57;d&#x65F6;&#xFF0C;m=m+1<br>
+e:&#x6307;&#x6570;&#x7684;&#x7B26;&#x53F7;&#x53D8;&#x91CF;&#xFF08;+&#x4E3A;1&#xFF0C;-&#x4E3A;-1&#xFF09;<br>
+t:&#x7C7B;&#x578B;&#x53D8;&#x91CF;(&#x6574;&#x578B;&#x4E3A;0&#xFF0C;&#x5B9E;&#x578B;&#x4E3A;1)<br>
+Result: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>u</mi><mi>m</mi><mo>=</mo><mi>n</mi><mo>&#x2217;</mo><mn>1</mn><msup><mn>0</mn><mrow><mi>e</mi><mo>&#x2217;</mo><mi>p</mi><mo>&#x2212;</mo><mi>m</mi></mrow></msup></mrow><annotation encoding="application/x-tex">num= n*10^{e*p-m}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathit">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2217;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.771331em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.771331em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">e</span><span class="mbin mtight">&#x2217;</span><span class="mord mathit mtight">p</span><span class="mbin mtight">&#x2212;</span><span class="mord mathit mtight">m</span></span></span></span></span></span></span></span></span></span></span></span><br>
+<img src="translator.png" alt="avatar"></li>
+<li>&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x529F;&#x80FD;<br>
+q1: Initialization,n=p=m=t=0;e=1;num=0;<br>
+q2:n=10<em>n+val(d);<br>
+q3:t=1;<br>
+q4:n=10</em>n+val(d); m=m+1;<br>
+q5:t=1;<br>
+q6:if&apos;-&apos; then e=-1;<br>
+q7:p=10*p+val(d);</li>
+</ol>
+<div class="flow">st=&gt;start: &#x5F00;&#x59CB;
+op1=&gt;operation: state=1
+op2=&gt;operation: Semfun(state)
+op3=&gt;operation: getchar(ch)
+op4=&gt;operation: &#x67E5;&#x53D8;&#x6362;&#x8868;&#xFF1A;&#x3B4;(state,ch)=?
+con1=&gt;condition: &#x3B4;=empty
+con2=&gt;condition: &#x3B4;=ok
+op5=&gt;operation: state=&#x3B4;
+io=&gt;inputoutput: reject
+op6=&gt;operation: Result:num=n*10^{e*p-m}
+ed=&gt;end: &#x7ED3;&#x675F;
+
+st-&gt;op1-&gt;op2-&gt;op3-&gt;op4-&gt;con1
+con1(yes)-&gt;io-&gt;ed
+con1(no)-&gt;con2(no)-&gt;op5(top)-&gt;op2
+con2(yes)-&gt;op6-&gt;ed
+</div><h1 class="mume-header" id="chapter-5-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90">Chapter 5 &#x8BED;&#x6CD5;&#x5206;&#x6790;</h1>
+
+<p>&#x8BC6;&#x522B;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#xFF0C;&#x68C0;&#x67E5;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF0C;&#x8F93;&#x51FA;&#x8BED;&#x6CD5;&#x6811;&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;</p>
+<h2 class="mume-header" id="%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E5%88%86%E7%B1%BB">&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x7684;&#x5206;&#x7C7B;</h2>
+
+<p>&#x63A8;&#x5BFC;&#x548C;&#x89C4;&#x7EA6;&#x90FD;&#x884C;</p>
+<ol>
+<li>&#x81EA;&#x9876;&#x5411;&#x4E0B;&#xFF1A;&#x8BED;&#x6CD5;&#x6811;&#x4ECE;&#x6839;&#x7ED3;&#x70B9;&#x5F00;&#x59CB;&#x6784;&#x9020;&#xFF0C;&#x91C7;&#x7528;<strong>&#x6700;&#x5DE6;&#x63A8;&#x5BFC;</strong></li>
+<li>&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#xFF1A;&#x8BED;&#x6CD5;&#x6811;&#x4ECE;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#x6784;&#x9020;&#xFF0C;&#x91C7;&#x7528;<strong>&#x6700;&#x5DE6;&#x89C4;&#x7EA6;</strong></li>
+</ol>
+<p>&#x4EE5;&#x7B97;&#x672F;&#x8868;&#x8FBE;&#x5F0F;&#x4E3A;&#x4F8B;</p>
+<p>&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#x65B9;&#x6CD5;&#x7684;&#x5173;&#x952E;&#x662F;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x5F53;&#x524D;&#x53E5;&#x5B50;&#x7684;&#x53E5;&#x67C4;</p>
+<h2 class="mume-header" id="%E9%80%92%E5%BD%92%E5%AD%90%E7%A8%8B%E5%BA%8F">&#x9012;&#x5F52;&#x5B50;&#x7A0B;&#x5E8F;</h2>
+
+<h3 class="mume-header" id="%E9%80%92%E5%BD%92%E5%AD%90%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A7%84%E5%88%99">&#x9012;&#x5F52;&#x5B50;&#x7A0B;&#x5E8F;&#x7684;&#x89C4;&#x5219;</h3>
+
+<ol>
+<li>
+<p>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x975E;&#x7EC8;&#x7ED3;&#x7B26;&#x90FD;&#x8BBE;&#x5B9A;&#x4E00;&#x4E2A;&#x5B50;&#x7A0B;&#x5E8F;&#xFF0C;&#x7528;&#x6765;&#x8BC6;&#x522B;&#x5B83;&#x5B9A;&#x4E49;&#x7684;&#x7B26;&#x53F7;&#x4E32;</p>
+</li>
+<li>
+<p>&#x6BCF;&#x4E2A;&#x5B50;&#x7A0B;&#x5E8F;&#x4EE5;&#x76F8;&#x5E94;&#x7684;&#x975E;&#x7EC8;&#x7ED3;&#x7B26;&#x547D;&#x540D;</p>
+</li>
+<li>
+<p>&#x5B50;&#x7A0B;&#x5E8F;&#x7684;&#x5185;&#x5BB9;&#x7531;&#x4EA7;&#x751F;&#x5F0F;&#x53F3;&#x90E8;&#x7EC4;&#x6210;</p>
+<div class="flow">st=&gt;start: &#x5165;&#x53E3;
+ed=&gt;end: &#x51FA;&#x53E3;
+a=&gt;condition: a?
+b=&gt;condition: b?
+e=&gt;condition: e?
+c=&gt;condition: c?
+e1=&gt;inputoutput: err1
+e2=&gt;inputoutput: err2
+n1=&gt;operation: NEXT(w)
+n2=&gt;operation: NEXT(w)
+n3=&gt;operation: NEXT(w)
+n4=&gt;operation: NEXT(w)
+A=&gt;subroutine: A
+B=&gt;subroutine: B
+D=&gt;subroutine: D
+st-&gt;a
+a(yes)-&gt;n1-&gt;B-&gt;e
+e(yes)-&gt;n2-&gt;D-&gt;ed
+e(no)-&gt;e1
+a(no)-&gt;b
+b(yes)-&gt;n3-&gt;A-&gt;c
+c(yes)-&gt;n4-&gt;ed
+c(no)-&gt;e2
+b(no)-&gt;ed
+</div></li>
+</ol>
+<p><img src="example1.png" alt="&#x9012;&#x5F52;&#x5B50;&#x7A0B;&#x5E8F;"></p>
+<ol>
+<li>&#x6269;&#x5C55;&#x6587;&#x6CD5;<br>
+&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x4EA7;&#x751F;&#x5F0F;Z`-&gt;Z&#x4F5C;&#x4E3A;&#x4E3B;&#x65B9;&#x6CD5;</li>
+<li>&#x8FDB;&#x5165;&#x548C;&#x9000;&#x51FA;<br>
+&#x5B50;&#x7A0B;&#x5E8F;&#x5165;&#x53E3;&#x65F6;&#xFF0C;&#x5176;<strong>&#x9996;&#x7B26;&#x53F7;</strong>&#x5DF2;&#x7ECF;&#x8BFB;&#x6765;&#xFF01;<br>
+&#x5B50;&#x7A0B;&#x5E8F;&#x51FA;&#x53E3;&#x65F6;&#xFF0C;&#x5176;<strong>&#x540E;&#x7EE7;&#x7B26;</strong>&#x5E94;&#x8BE5;&#x8BFB;&#x6765;!</li>
+<li>&#x8BBE;&#x8BA1;&#x5B50;&#x7A0B;&#x5E8F;
+<ul>
+<li>&#x9047;&#x5230;&#x7EC8;&#x7ED3;&#x7B26;&#xFF0C;&#x5224;&#x65AD;&#x4E0E;&#x5F53;&#x524D;&#x5355;&#x8BCD;&#x662F;&#x5426;&#x76F8;&#x7B26;&#xFF0C;&#x786E;&#x8BA4;&#x662F;&#x540E;&#x8BFB;&#x53D6;&#x4E0B;&#x4E00;&#x5355;&#x8BCD;</li>
+<li>&#x9047;&#x5230;&#x975E;&#x7EC8;&#x7ED3;&#x7B26;&#xFF0C;&#x8C03;&#x7528;&#x8BE5;&#x975E;&#x7EC8;&#x7ED3;&#x7B26;&#x8868;&#x793A;&#x7684;&#x5B50;&#x7A0B;&#x5E8F;&#xFF0C;&#x8FD4;&#x56DE;&#x540E;&#x4E0D;&#x8BFB;&#x53D6;&#x4E0B;&#x4E00;&#x5355;&#x8BCD;</li>
+<li>&#x9047;&#x5230;&#x7A7A;&#x4E32;&#xFF0C;&#x76F4;&#x63A5;&#x8F6C;&#x51FA;&#x53E3;</li>
+</ul>
+</li>
+</ol>
+<h3 class="mume-header" id="%E9%99%90%E5%88%B6%E6%96%87%E6%B3%95">&#x9650;&#x5236;&#x6587;&#x6CD5;</h3>
+
+<p>&#x9012;&#x5F52;&#x5B50;&#x7A0B;&#x5E8F;&#x5C06;&#x4EA7;&#x751F;&#x5F0F;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7B26;&#x53F7;&#x4E0E;&#x5F53;&#x524D;&#x5355;&#x8BCD;&#x76F8;&#x5339;&#x914D;&#xFF0C;&#x4EE5;&#x4FBF;&#x51B3;&#x5B9A;&#x7528;&#x54EA;&#x4E2A;&#x4EA7;&#x751F;&#x5F0F;&#x8FDB;&#x884C;&#x63A8;&#x5BFC;</p>
+<p>&#x9650;&#x5236;&#xFF1A;</p>
+<ol>
+<li>&#x5177;&#x6709;&#x76F8;&#x540C;&#x5DE6;&#x90E8;&#x7684;&#x4EA7;&#x751F;&#x5F0F;&#x53F3;&#x90E8;&#x9996;&#x7B26;&#x53F7;&#x4E0D;&#x540C;</li>
+<li>&#x4E0D;&#x80FD;&#x6709;&#x5DE6;&#x9012;&#x5F52;</li>
+</ol>
+<p>&#x9519;&#x8BEF;&#x4F8B;&#x5B50;</p>
+<ol>
+<li>A-&gt;aA|aB</li>
+<li>A-&gt;Ab|a</li>
+</ol>
+<p>&#x5373;&#x8981;&#x6C42;&#x6587;&#x6CD5;&#x662F;LL(1)&#x6587;&#x6CD5;</p>
+<p>&#x901A;&#x8FC7;&#x7B49;&#x4EF7;&#x53D8;&#x5316;&#x6D88;&#x9664;&#x5DE6;&#x9012;&#x5F52;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: d Pages: 1 -->
+<svg width="149pt" height="222pt" viewBox="0.00 0.00 149.01 221.63" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 217.6314)">
+<title>d</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-217.6314 145.0079,-217.6314 145.0079,4 -4,4"/>
+<!-- B -->
+<g id="node1" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="#000000" cx="21.0079" cy="-106.8157" rx="18" ry="18"/>
+<text text-anchor="middle" x="21.0079" y="-102.6157" font-family="Times,serif" font-size="14.00" fill="#000000">B</text>
+</g>
+<!-- C -->
+<g id="node2" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="#000000" cx="93.0079" cy="-106.8157" rx="18" ry="18"/>
+<text text-anchor="middle" x="93.0079" y="-102.6157" font-family="Times,serif" font-size="14.00" fill="#000000">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge6" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="#000000" d="M39.1765,-106.8157C46.8769,-106.8157 56.0335,-106.8157 64.5912,-106.8157"/>
+<polygon fill="#000000" stroke="#000000" points="64.5946,-110.3158 74.5946,-106.8157 64.5946,-103.3158 64.5946,-110.3158"/>
+<text text-anchor="middle" x="57.0079" y="-114.0157" font-family="Times,serif" font-size="14.00" fill="#000000">b</text>
+</g>
+<!-- D -->
+<g id="node3" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="#000000" cx="18.0079" cy="-18.0079" rx="18.0157" ry="18.0157"/>
+<text text-anchor="middle" x="18.0079" y="-13.8079" font-family="Times,serif" font-size="14.00" fill="#000000">D</text>
+</g>
+<!-- B&#45;&gt;D -->
+<g id="edge2" class="edge">
+<title>B-&gt;D</title>
+<path fill="none" stroke="#000000" d="M18.4945,-88.9066C17.7975,-83.1431 17.1377,-76.7208 16.7933,-70.8157 16.3306,-62.8853 16.3201,-54.2753 16.5088,-46.3537"/>
+<polygon fill="#000000" stroke="#000000" points="20.0154,-46.2225 16.8657,-36.1067 13.0196,-45.9788 20.0154,-46.2225"/>
+<text text-anchor="middle" x="20.1152" y="-58.2157" font-family="Times,serif" font-size="14.00" fill="#000000">a</text>
+</g>
+<!-- C&#45;&gt;B -->
+<g id="edge5" class="edge">
+<title>C-&gt;B</title>
+<path fill="none" stroke="#000000" d="M79.79,-94.4375C72.4523,-89.0568 62.9928,-84.4903 53.9006,-87.0157 50.6895,-87.9076 47.4779,-89.2064 44.3887,-90.7192"/>
+<polygon fill="#000000" stroke="#000000" points="42.5762,-87.7234 35.6102,-95.7063 46.0339,-93.8099 42.5762,-87.7234"/>
+<text text-anchor="middle" x="57.0079" y="-91.2157" font-family="Times,serif" font-size="14.00" fill="#000000">a</text>
+</g>
+<!-- E -->
+<g id="node4" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="#000000" cx="98.0079" cy="-18.0079" rx="18" ry="18"/>
+<text text-anchor="middle" x="98.0079" y="-13.8079" font-family="Times,serif" font-size="14.00" fill="#000000">E</text>
+</g>
+<!-- C&#45;&gt;E -->
+<g id="edge7" class="edge">
+<title>C-&gt;E</title>
+<path fill="none" stroke="#000000" d="M94.0197,-88.8441C94.7064,-76.6468 95.6287,-60.2659 96.4133,-46.329"/>
+<polygon fill="#000000" stroke="#000000" points="99.9126,-46.4385 96.9804,-36.2575 92.9237,-46.0449 99.9126,-46.4385"/>
+<text text-anchor="middle" x="98.5079" y="-58.2157" font-family="Times,serif" font-size="14.00" fill="#000000">b</text>
+</g>
+<!-- D&#45;&gt;C -->
+<g id="edge9" class="edge">
+<title>D-&gt;C</title>
+<path fill="none" stroke="#000000" d="M29.8361,-31.6424C35.6387,-38.3577 42.7166,-46.5883 49.0079,-54.0157 57.5974,-64.1564 67.0412,-75.4673 74.9701,-85.0108"/>
+<polygon fill="#000000" stroke="#000000" points="72.41,-87.4066 81.4885,-92.8686 77.7977,-82.9374 72.41,-87.4066"/>
+<text text-anchor="middle" x="65.5079" y="-58.2157" font-family="Times,serif" font-size="14.00" fill="#000000">b</text>
+</g>
+<!-- D&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>D-&gt;D</title>
+<path fill="none" stroke="#000000" d="M34.3017,-25.6758C44.4028,-27.5248 54.0157,-24.9688 54.0157,-18.0079 54.0157,-13.5485 50.0706,-10.897 44.5793,-10.0532"/>
+<polygon fill="#000000" stroke="#000000" points="44.2001,-6.5623 34.3017,-10.3399 44.3954,-13.5596 44.2001,-6.5623"/>
+<text text-anchor="middle" x="57.123" y="-13.8079" font-family="Times,serif" font-size="14.00" fill="#000000">a</text>
+</g>
+<!-- E&#45;&gt;B -->
+<g id="edge10" class="edge">
+<title>E-&gt;B</title>
+<path fill="none" stroke="#000000" d="M82.6149,-27.3594C69.2881,-35.6781 51.3104,-47.505 45.7933,-54.0157 39.4195,-61.5373 34.3089,-70.9746 30.4225,-79.7826"/>
+<polygon fill="#000000" stroke="#000000" points="27.0678,-78.7417 26.5528,-89.324 33.5546,-81.3726 27.0678,-78.7417"/>
+<text text-anchor="middle" x="49.1152" y="-58.2157" font-family="Times,serif" font-size="14.00" fill="#000000">a</text>
+</g>
+<!-- E&#45;&gt;E -->
+<g id="edge8" class="edge">
+<title>E-&gt;E</title>
+<path fill="none" stroke="#000000" d="M114.2981,-25.6758C124.397,-27.5248 134.0079,-24.9688 134.0079,-18.0079 134.0079,-13.5485 130.0636,-10.897 124.5735,-10.0532"/>
+<polygon fill="#000000" stroke="#000000" points="124.1966,-6.5623 114.2981,-10.3399 124.3919,-13.5595 124.1966,-6.5623"/>
+<text text-anchor="middle" x="137.5079" y="-13.8079" font-family="Times,serif" font-size="14.00" fill="#000000">b</text>
+</g>
+<!-- A -->
+<g id="node5" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="#000000" cx="56.0079" cy="-195.6236" rx="18.0157" ry="18.0157"/>
+<text text-anchor="middle" x="56.0079" y="-191.4236" font-family="Times,serif" font-size="14.00" fill="#000000">A</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="#000000" d="M49.2595,-178.5005C44.1916,-165.6414 37.1596,-147.7985 31.3791,-133.1315"/>
+<polygon fill="#000000" stroke="#000000" points="34.5397,-131.6052 27.6168,-123.585 28.0272,-134.1719 34.5397,-131.6052"/>
+<text text-anchor="middle" x="45.1152" y="-147.0157" font-family="Times,serif" font-size="14.00" fill="#000000">a</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge4" class="edge">
+<title>A-&gt;C</title>
+<path fill="none" stroke="#000000" d="M62.9673,-178.9195C68.342,-166.0191 75.8804,-147.9251 82.061,-133.0905"/>
+<polygon fill="#000000" stroke="#000000" points="85.4645,-134.0219 86.0796,-123.4449 79.0029,-131.3297 85.4645,-134.0219"/>
+<text text-anchor="middle" x="80.5079" y="-147.0157" font-family="Times,serif" font-size="14.00" fill="#000000">b</text>
+</g>
+</g>
+</svg>
+</p><hr>
+<h2 class="mume-header" id="ll1%E5%88%86%E6%9E%90%E6%B3%95">LL(1)&#x5206;&#x6790;&#x6CD5;</h2>
+
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;L&#x4EE3;&#x8868;&#x4ECE;&#x5DE6;&#x5411;&#x53F3;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;L&#x4EE3;&#x8868;&#x6700;&#x5DE6;&#x63A8;&#x5BFC;</li>
+<li>1&#x8868;&#x793A;&#x5411;&#x524D;&#x67E5;&#x770B;&#x7684;&#x7B26;&#x53F7;&#x7684;&#x4E2A;&#x6570;<br>
+LL(1)&#x53C8;&#x79F0;&#x9884;&#x6D4B;&#x5206;&#x6790;&#x6CD5;&#xFF0C;&#x662F;&#x6CA1;&#x6709;&#x56DE;&#x6EAF;&#x7684;&#xFF08;&#x786E;&#x5B9A;&#x7684;&#xFF09;&#x81EA;&#x9876;&#x5411;&#x4E0B;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x65B9;&#x6CD5;</li>
+</ul>
+<p>&#x4E09;&#x4E2A;&#x5173;&#x952E;&#x70B9;</p>
+<ol>
+<li>&#x5206;&#x6790;&#x6808;&#x8BB0;&#x5F55;&#x7740;&#x5206;&#x6790;&#x7684;&#x8FC7;&#x7A0B;</li>
+<li>&#x5206;&#x6790;&#x8868;&#x8BB0;&#x5F55;&#x5982;&#x4F55;&#x53BB;&#x9009;&#x62E9;&#x4EA7;&#x751F;&#x5F0F;</li>
+<li>&#x6587;&#x6CD5;&#x5FC5;&#x987B;&#x662F;LL(1)&#x6587;&#x6CD5;</li>
+</ol>
+<p>&#x4F8B;&#x5B50;</p>
+<blockquote>
+<p>&#x6587;&#x6CD5;G(Z)&#xFF1A;<br>
+Z -&gt; dAZ | bAc<br>
+A -&gt; aA |&#x3B5;</p>
+</blockquote>
+<p>&#x5904;&#x7406;&#x5B57;&#x7B26;&#x4E32; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B1;</mi><mo>=</mo><mi>b</mi><mi>a</mi><mi>c</mi><mi mathvariant="normal">#</mi></mrow><annotation encoding="application/x-tex">\alpha=bac\#</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit">b</span><span class="mord mathit">a</span><span class="mord mathit">c</span><span class="mord">#</span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th>&#x5206;&#x6790;&#x6808;</th>
+<th>&#x5F53;&#x524D;&#x7B26;&#x53F7;</th>
+<th>&#x5269;&#x4E0B;&#x7684;&#x7B26;&#x53F7;</th>
+<th>&#x9009;&#x62E9;&#x4EA7;&#x751F;&#x5F0F;&#x6216;&#x8005;&#x5339;&#x914D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#Z</td>
+<td>b</td>
+<td>ac#</td>
+<td>Z-&gt;bAc</td>
+</tr>
+<tr>
+<td>#cAb</td>
+<td>b</td>
+<td>ac#</td>
+<td>b&#x88AB;&#x5339;&#x914D;&#x5230;</td>
+</tr>
+<tr>
+<td>#cA</td>
+<td>a</td>
+<td>c#</td>
+<td>A-&gt;aA</td>
+</tr>
+<tr>
+<td>#cAa</td>
+<td>a</td>
+<td>c#</td>
+<td>a&#x88AB;&#x5339;&#x914D;&#x5230;</td>
+</tr>
+<tr>
+<td>#cA</td>
+<td>c</td>
+<td>#</td>
+<td>A-&gt;&#x3B5;</td>
+</tr>
+<tr>
+<td>#c</td>
+<td>c</td>
+<td>#</td>
+<td>c&#x88AB;&#x5339;&#x914D;&#x5230;</td>
+</tr>
+<tr>
+<td>#</td>
+<td>#</td>
+<td></td>
+<td>OK</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>&#x9009;&#x62E9;&#x63A8;&#x5BFC;&#x4EA7;&#x751F;&#x5F0F;&#x540E;&#xFF0C;&#x8981;&#x9006;&#x5E8F;&#x538B;&#x6808;</strong></li>
+<li><strong>c&#x2208;follow(A),&#x8981;&#x9009;&#x62E9;A-&gt;&#x3B5;&#x8FD9;&#x4E2A;&#x4EA7;&#x751F;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x6808;&#x4E2D;&#x540E;&#x9762;&#x5143;&#x7D20;&#x4E2D;&#x5F88;&#x53EF;&#x80FD;&#x51FA;&#x73B0;c&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4E0E;&#x5F53;&#x524D;&#x5355;&#x8BCD;c&#x8FDB;&#x884C;&#x5339;&#x914D;</strong></li>
+<li><strong>&#x6700;&#x53F3;&#x4E00;&#x5217;&#xFF1A;&#x63A8;&#x5BFC;&#x6240;&#x7528;&#x4EA7;&#x751F;&#x5F0F;&#x6216;&#x5339;&#x914D;</strong></li>
+</ul>
+<h3 class="mume-header" id="ll1%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95">LL(1)&#x5206;&#x6790;&#x7B97;&#x6CD5;</h3>
+
+<ol>
+<li>&#x82E5; &#x6808;&#x9876;&#x7B26;=A,&#x5F53;&#x524D;&#x7B26; w=a, &#x8BBE;&#x6709;&#x4EA7;&#x751F;&#x5F0F;&#xFF1A;<br>
+A-&gt;a&#x3B1;&#xFF0C;  &#x5219;  POP,PUSH<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>a</mi><mi>&#x3B1;</mi><msup><mo>)</mo><mi>R</mi></msup></mrow><annotation encoding="application/x-tex">(a&#x3B1;)^R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.00773em;">R</span></span></span></span></span></span></span></span></span></span></span> ; R&#x4EE3;&#x8868;&#x9006;&#x5411;</li>
+<li>&#x82E5; &#x6808;&#x9876;&#x7B26;=a,&#x5F53;&#x524D;&#x7B26; w=a&#xFF1B; &#x5219;  POP,NEXT(w);</li>
+</ol>
+<h2 class="mume-header" id="ll1%E6%96%87%E6%B3%95">LL(1)&#x6587;&#x6CD5;</h2>
+
+<p>&#x6587;&#x6CD5;&#x51B3;&#x5B9A;&#x4E86;&#x5206;&#x6790;&#x8868;</p>
+<ol>
+<li>first follow&#x548C;select<br>
+first(a)&#x662F;&#x4ECE;a&#x80FD;&#x63A8;&#x5BFC;&#x51FA;&#x7684;&#x6240;&#x6709;&#x9996;&#x7B26;&#x53F7;</li>
+<li>follow(A)&#x662F;&#x6240;&#x6709;&#x53E5;&#x578B;&#x4E2D;&#x7D27;&#x8DDF;&#x5728;A&#x4E4B;&#x540E;&#x51FA;&#x73B0;&#x7684;&#x7EC8;&#x7ED3;&#x7B26;&#x3002;</li>
+<li><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>e</mi><mi>l</mi><mi>e</mi><mi>c</mi><mi>t</mi><mo>(</mo><mi>A</mi><mo>&#x2192;</mo><mi>a</mi><mo>)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>f</mi><mi>i</mi><mi>r</mi><mi>s</mi><mi>t</mi><mo>(</mo><mi>&#x3B1;</mi><mo>)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>&#x3B1;</mi><msup><mo>&#x21CF;</mo><mo>&#x2217;</mo></msup><mi>&#x3B5;</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>f</mi><mi>i</mi><mi>r</mi><mi>s</mi><mi>t</mi><mo>(</mo><mi>&#x3B1;</mi><mo>)</mo><mo>&#x222A;</mo><mi>f</mi><mi>o</mi><mi>l</mi><mi>l</mi><mi>o</mi><mi>w</mi><mo>(</mo><mi>&#x3B1;</mi><mo>)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>&#x3B1;</mi><msup><mo>&#x21D2;</mo><mo>&#x2217;</mo></msup><mi>&#x3B5;</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">select(A \rightarrow a)=
+\begin{cases}
+first(\alpha) &amp; \alpha \nRightarrow ^ *\varepsilon \\
+first(\alpha)\cup follow(\alpha)&amp; \alpha\Rightarrow^*\varepsilon
+\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit">s</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit">c</span><span class="mord mathit">t</span><span class="mopen">(</span><span class="mord mathit">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2192;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit">a</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mclose">)</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x222A;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel amsrm">&#x21CF;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">&#x2217;</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">&#x3B5;</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel">&#x21D2;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">&#x2217;</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">&#x3B5;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>
+<ul>
+<li>&#x5982;&#x679C;&#x4EA7;&#x751F;&#x5F0F;&#x53F3;&#x4FA7;&#x6709;&#x7EC8;&#x7ED3;&#x7B26;&#x53F7;&#xFF0C;&#x5219;&#x80AF;&#x5B9A;&#x4E3A;&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;</li>
+<li>&#x5982;&#x679C;&#x4EA7;&#x751F;&#x5F0F;&#x53F3;&#x4FA7;&#x53EA;&#x542B;&#x6709;&#x975E;&#x7EC8;&#x7ED3;&#x7B26;&#x53F7;&#xFF0C;&#x624D;&#x6709;&#x53EF;&#x80FD;&#x4E3A;&#x7B2C;&#x4E8C;&#x79CD;&#x60C5;&#x51B5;</li>
+</ul>
+</li>
+<li>&#x82E5; &#x3B1;=&#x3B5;  &#x5219; first(&#x3B1;)={ }&#xFF1B;</li>
+<li>&#x8BBE; # &#x4E3A;&#x8F93;&#x5165;&#x4E32;&#x7684;&#x7ED3;&#x675F;&#x7B26;&#xFF0C;&#x5219; #&#x2208;follow(Z);</li>
+</ol>
+<p>&#x6C42; follow(A) &#x8981;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x67E5;&#x6240;&#x6709;&#x53F3;&#x90E8;&#x542B;&#x6709;A&#x7684;&#x4EA7;&#x751F;&#x5F0F;: B -&gt; &#x2026;A&#x3B2;<br>
+&#x2460; &#x82E5; &#x3B2; &#x4E0D;&#x7A7A;&#x65F6; , &#x5219; first(&#x3B2;)&#x2208;follow(A) &#xFF1B;<br>
+&#x2461; &#x82E5; &#x3B2; &#x53D6;&#x7A7A;&#x65F6; , &#x5219; follow(B)&#x2208;follow(A) &#xFF1B;<br>
+&#x2462; &#x82E5; &#x3B2; = &#x3B5; &#x65F6; , &#x5219; follow(B)&#x2208;follow(A)&#x3002;</li>
+</ul>
+<p><strong>&#x5177;&#x6709;&#x76F8;&#x540C;&#x5DE6;&#x90E8;&#x7684;&#x4EA7;&#x751F;&#x5F0F;&#x7684;select&#x96C6;&#x4E0D;&#x76F8;&#x4EA4;&#x5373;&#x4E3A;LL(1)&#x6587;&#x6CD5;</strong></p>
+<p>&#x5206;&#x6790;&#x8868;<br>
+&#x884C;&#x4EE3;&#x8868;&#x975E;&#x7EC8;&#x7ED3;&#x7B26;&#x53F7;<br>
+&#x5217;&#x4EE3;&#x8868;&#x7EC8;&#x7ED3;&#x7B26;&#x53F7;<br>
+&#x8868;&#x9879;&#x4EE3;&#x8868;&#x4EA7;&#x751F;&#x5F0F;</p>
+<h2 class="mume-header" id="lr%E5%88%86%E6%9E%90">LR()&#x5206;&#x6790;</h2>
+
+<p>&#x548C;LL(1)&#x76F8;&#x6BD4;<br>
+&#x4F18;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x6587;&#x6CD5;&#x9650;&#x5236;&#x5C11;</li>
+<li>&#x66F4;&#x5FEB;&#x66F4;&#x51C6;&#x786E;&#x5730;&#x8FDB;&#x884C;&#x9519;&#x8BEF;&#x7684;&#x5B9A;&#x4F4D;</li>
+</ul>
+<p>&#x7F3A;&#x70B9;</p>
+<ul>
+<li>&#x5B9E;&#x73B0;&#x6BD4;&#x8F83;&#x56F0;&#x96BE;&#xFF0C;&#x8981;&#x6784;&#x9020;&#x53E5;&#x67C4;&#x8BC6;&#x522B;&#x5668;</li>
+</ul>
+<p>LR(k)<br>
+L&#xFF1A;&#x4ECE;&#x5DE6;&#x5411;&#x53F3;&#x626B;&#x63CF;<br>
+R&#xFF1A;&#x6700;&#x5DE6;&#x89C4;&#x7EA6;<br>
+k&#xFF1A;&#x4E0B;&#x4E00;&#x4E2A;&#x8BFB;&#x7684;&#x5355;&#x8BCD;&#x6570;&#x91CF;</p>
+<p>&#x4E09;&#x70B9;&#x5173;&#x952E;</p>
+<ol>
+<li>&#x5206;&#x6790;&#x6808;</li>
+<li>&#x5982;&#x679C;&#x6808;&#x9876;&#x6709;&#x53E5;&#x67C4;&#xFF0C;&#x8FDB;&#x884C;&#x89C4;&#x7EA6;&#xFF0C;&#x5426;&#x5219;&#x79FB;&#x8FDB;</li>
+<li>&#x6784;&#x9020;&#x7C7B;&#x4F3C;&#x4E8E;DFA&#x7684;&#x53E5;&#x67C4;&#x8BC6;&#x522B;&#x5668;</li>
+</ol>
+<p>&#x6808;&#x4E00;&#x5F00;&#x59CB;&#x538B;#&#xFF0C;&#x6700;&#x540E;&#x5269;&#x5F00;&#x59CB;&#x7B26;&#x53F7;</p>
+<h3 class="mume-header" id="%E5%8F%A5%E6%9F%84%E8%AF%86%E5%88%AB%E5%99%A8">&#x53E5;&#x67C4;&#x8BC6;&#x522B;&#x5668;</h3>
+
+<ol>
+<li>LR(0)&#x9879;&#xFF1A;&#x4EA7;&#x751F;&#x5F0F;&#x53F3;&#x4FA7;&#x52A0;&#x4E00;&#x4E2A;&#x70B9;&#xB7;</li>
+</ol>
+<blockquote>
+<p>&#x70B9;&#x7684;&#x5DE6;&#x4FA7;&#x8868;&#x793A;&#x5DF2;&#x7ECF;&#x8BC6;&#x522B;&#x51FA;&#x7684;&#x5B57;&#x7B26;&#x4E32;<br>
+&#x70B9;&#x7684;&#x53F3;&#x4FA7;&#x8868;&#x793A;&#x6211;&#x4EEC;&#x671F;&#x671B;&#x8BFB;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+</blockquote>
+<ol start="2">
+<li>&#x6269;&#x5C55;&#x6587;&#x6CD5;</li>
+<li>LR(0)&#x9879;&#x5206;&#x7C7B;</li>
+</ol>
+<ul>
+<li>&#x89C4;&#x7EA6;&#x9879;&#x76EE;&#xFF1A; A-&gt;a&#xB7; &#x4EA7;&#x751F;&#x5F0F;&#x7684;&#x53F3;&#x90E8;&#x5DF2;&#x7ECF;&#x5206;&#x6790;&#x5B8C;</li>
+<li>&#x79FB;&#x8FDB;&#x9879;&#x76EE;&#xFF1A;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>&#x2192;</mo><mi>&#x3B1;</mi><mo separator="true">&#x22C5;</mo><mi>a</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">A\rightarrow \alpha&#xB7;ab</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathit">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2192;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mpunct">&#x22C5;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">a</span><span class="mord mathit">b</span></span></span></span> &#x671F;&#x5F85;&#x79FB;&#x8FDB;&#x4E00;&#x4E2A;&#x7B26;&#x53F7;a</li>
+<li>&#x5F85;&#x7EA6;&#x9879;&#x76EE;&#xFF1A;A-&gt;a&#xB7;Bb &#x671F;&#x5F85;&#x5F52;&#x7EA6;&#x5F97;&#x5230;B</li>
+<li>&#x63A5;&#x53D7;&#x9879;&#x76EE;&#xFF1A; S&apos;-&gt;S&#xB7; &#x6574;&#x4E2A;&#x53E5;&#x5B50;&#x5206;&#x6790;&#x5B8C;&#x6BD5;</li>
+</ul>
+<ol start="4">
+<li>DFA&#x7684;&#x72B6;&#x6001;&#xFF1A;&#x591A;&#x4E2A;LR(0)&#x9879;&#x76EE;&#x5DE5;&#x7A0B;&#x4E00;&#x4E2A;&#x8BC6;&#x522B;&#x5668;&#x7684;&#x72B6;&#x6001;</li>
+<li>&#x95ED;&#x5305;(I)&#xFF1A;I&#x662F;LR(0)&#x9879;&#x76EE;&#x96C6;<br>
+&#x82E5;&#x9879;&#x76EE;A &#xF0AE; &#xF061; &#x2219; B&#xF062;&#x2208; closure( I )&#xFF0C;&#x5219;&#x5BF9;&#x6240;&#x6709;<br>
+B &#xF0AE; r &#x2208; P&#xFF0C;&#x9879;&#x76EE;B &#xF0AE; &#x2219; r &#x2208; closure( I );</li>
+</ol>
+<h2 class="mume-header" id="%E9%97%AD%E5%8C%85">&#x95ED;&#x5305;</h2>
+
+<h2 class="mume-header" id="%E5%8F%98%E6%8D%A2%E5%87%BD%E6%95%B0">&#x53D8;&#x6362;&#x51FD;&#x6570;</h2>
+
+<h2 class="mume-header" id="lr%E5%88%86%E6%9E%90%E5%99%A8">LR()&#x5206;&#x6790;&#x5668;</h2>
+
+<p>&#x56DB;&#x79CD;&#x65B9;&#x6CD5;</p>
+<p>&#x7531;&#x4E8E;&#x6587;&#x6CD5;&#x7684;&#x5185;&#x5BB9;&#x548C;&#x5F62;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;&#x5BFC;&#x81F4;&#x6784;&#x9020;&#x53E5;&#x67C4;&#x96BE;&#x5EA6;&#x4E5F;&#x4E0D;&#x540C;</p>
+<p>LR(0)&#x63A7;&#x5236;&#x5668;&#x52A0;&#x4E0A;LR&#x5206;&#x6790;&#x8868;<br>
+&#x8BC6;&#x522B;&#x5668;&#x6709;&#x591A;&#x5C11;&#x72B6;&#x6001;&#x5206;&#x6790;&#x8868;&#x5C31;&#x6709;&#x591A;&#x5C11;</p>
+<h1 class="mume-header" id="chapter-6-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90">Chapter 6 &#x8BED;&#x4E49;&#x5206;&#x6790;</h1>
+
+<h2 class="mume-header" id="%E9%9D%99%E6%80%81%E8%AF%AD%E4%B9%89%E5%AE%A1%E6%9F%A5">&#x9759;&#x6001;&#x8BED;&#x4E49;&#x5BA1;&#x67E5;</h2>
+
+<h2 class="mume-header" id="%E5%A6%82%E6%9E%9C%E9%9D%99%E6%80%81%E8%AF%AD%E4%B9%89%E6%AD%A3%E7%A1%AE%E7%94%9F%E6%88%90%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81">&#x5982;&#x679C;&#x9759;&#x6001;&#x8BED;&#x4E49;&#x6B63;&#x786E;&#xFF0C;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;</h2>
+
+<p>&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#x8BBE;&#x7F6E;&#x7684;&#x76EE;&#x7684;</p>
+<ol>
+<li>&#x4FBF;&#x4E8E;&#x8FDB;&#x884C;&#x4E0E;&#x673A;&#x5668;&#x65E0;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x4F18;&#x5316;</li>
+<li>&#x4F7F;&#x5F97;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x6539;&#x53D8;&#x76EE;&#x6807;&#x673A;&#x66F4;&#x5BB9;&#x6613;</li>
+<li>&#x4F7F;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x7684;&#x7ED3;&#x6784;&#x5728;&#x903B;&#x8F91;&#x4E0A;&#x66F4;&#x4E3A;&#x7B80;&#x5355;&#x660E;&#x786E;&#xFF0C;&#x4EE5;&#x4E2D;&#x95F4;&#x8BED;&#x8A00;&#x4E3A;&#x754C;&#x9762;&#xFF0C;&#x7F16;&#x8BD1;&#x524D;&#x7AEF;&#x548C;&#x540E;&#x7AEF;&#x7684;&#x63A5;&#x53E3;&#x66F4;&#x6E05;&#x6670;</li>
+</ol>
+<h2 class="mume-header" id="%E5%9B%9B%E5%85%83%E5%BC%8F%E8%AE%BE%E8%AE%A1">&#x56DB;&#x5143;&#x5F0F;&#x8BBE;&#x8BA1;</h2>
+
+<ol>
+<li>&#x8868;&#x8FBE;&#x5F0F;<br>
+&#x57FA;&#x672C;&#x5F62;&#x5F0F;: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>:</mo><mo>(</mo><mi>&#x3C9;</mi><mtext>&#xA0;</mtext><mi>o</mi><mn>1</mn><mtext>&#xA0;</mtext><mi>o</mi><mn>2</mn><mtext>&#xA0;</mtext><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q:(\omega\  o1\  o2\  t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">&#x3C9;</span><span class="mspace">&#xA0;</span><span class="mord mathit">o</span><span class="mord">1</span><span class="mspace">&#xA0;</span><span class="mord mathit">o</span><span class="mord">2</span><span class="mspace">&#xA0;</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span></li>
+<li></li>
+<li></li>
+<li></li>
+<li>while&#x5FAA;&#x73AF;&#x7684;&#x56DB;&#x5143;&#x5F0F;&#x8BBE;&#x8BA1;<br>
+q1(wh _ _ _)<br>
+quat(E)<br>
+q2(do res(E) _ _)<br>
+quat(S)<br>
+q3(we _ _ __)</li>
+</ol>
+<p>q1:while&#x8BED;&#x53E5;&#x7684;&#x5165;&#x53E3;&#x56DB;&#x5143;&#x5F0F;&#xFF08;&#x63D0;&#x4F9B;&#x8F6C;&#x5411;E&#x53C2;&#x7167;&#xFF09;<br>
+q2:&#x5F53;res(E)=false&#x8F6C;&#x5411;&#x51FA;&#x53E3;&#x56DB;&#x5143;&#x5F0F;<br>
+q3:while&#x5C3E;&#xFF08;&#x517C;&#x5FAA;&#x73AF;&#x8F6C;&#x5411;E&#xFF09;&#x56DB;&#x5143;&#x5F0F; we=while end</p>
+<h2 class="mume-header" id="%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%BF%BB%E8%AF%91">&#x8BED;&#x6CD5;&#x5236;&#x5BFC;&#x7FFB;&#x8BD1;</h2>
+
+<h3 class="mume-header" id="%E5%B1%9E%E6%80%A7%E6%96%87%E6%B3%95">&#x5C5E;&#x6027;&#x6587;&#x6CD5;</h3>
+
+<p>&#x662F;&#x4E0A;&#x4E0B;&#x6587;&#x65E0;&#x5173;&#x6587;&#x6CD5;&#x5728;<strong>&#x8BED;&#x4E49;</strong>&#x4E0A;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x63A5;&#x8FD1;&#x5F62;&#x5F0F;&#x5316;&#x7684;&#x8BED;&#x4E49;&#x63CF;&#x8FF0;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x5B9A;&#x4E49;&#x4E3A;&#x5982;&#x4E0B;&#x4E09;&#x5143;&#x7EC4;</p>
+<ol>
+<li>&#x5C5E;&#x6027;&#x4EE3;&#x8868;&#x4E0E;&#x6587;&#x53D1;&#x7B26;&#x53F7;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x6307;&#x8BED;&#x4E49;&#x4FE1;&#x606F;&#xFF1B;&#x6587;&#x6CD5;&#x4EA7;&#x751F;&#x5F0F;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6587;&#x6CD5;&#x7B26;&#x53F7;&#x90FD;&#x9644;&#x6709;&#x82E5;&#x5E72;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x5C5E;&#x6027;</li>
+<li>&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x548C;&#x4F20;&#x9012;&#xFF0C;&#x8BED;&#x4E49;&#x89C4;&#x5219;&#x5C31;&#x662F;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x4EA7;&#x751F;&#x5F0F;&#x4E2D;&#xFF0C;&#x76F8;&#x4E92;&#x5173;&#x8054;&#x7684;&#x5C5E;&#x6027;&#x6C42;&#x503C;&#x89C4;&#x5219;</li>
+<li>&#x5C5E;&#x6027;&#x5206;&#x4E24;&#x7C7B;</li>
+</ol>
+<ul>
+<li>&#x7EFC;&#x5408;&#x5C5E;&#x6027;&#xFF1A;&#x5176;&#x503C;&#x7531;&#x5B50;&#x5973;&#x5C5E;&#x6027;&#x503C;&#x6765;&#x8BA1;&#x7B97;&#xFF08;&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#x6C42;&#x503C;&#xFF09;</li>
+<li>&#x7EE7;&#x627F;&#x5C5E;&#x6027;&#xFF1A;&#x5176;&#x503C;&#x7531;&#x7236;&#x5144;&#x5C5E;&#x6027;&#x503C;&#x6765;&#x8BA1;&#x7B97;&#xFF08;&#x81EA;&#x9876;&#x5411;&#x4E0B;&#x6C42;&#x503C;&#xFF09;</li>
+</ul>
+<h1 class="mume-header" id="%E4%BC%98%E5%8C%96">&#x4F18;&#x5316;</h1>
+
+<h2 class="mume-header" id="%E5%88%86%E7%B1%BB">&#x5206;&#x7C7B;</h2>
+
+<p>&#x6839;&#x636E;&#x662F;&#x5426;&#x6D89;&#x53CA;&#x5177;&#x4F53;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6765;&#x5212;&#x5206;</p>
+<ol>
+<li>&#x4E0E;&#x673A;&#x5668;&#x65E0;&#x5173;&#x7684;&#x4F18;&#x5316;&#xFF08;&#x5728;&#x6E90;&#x4EE3;&#x7801;&#x6216;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#x7EA7;&#x4E0A;&#x8FDB;&#x884C;&#xFF09;
+<ol>
+<li>&#x5168;&#x5C40;&#x4F18;&#x5316;-&#x9488;&#x5BF9;&#x6574;&#x4E2A;&#x6E90;&#x7A0B;&#x5E8F;</li>
+<li>&#x5C40;&#x90E8;&#x4F18;&#x5316;-&#x9664;&#x5168;&#x5C40;&#x4F18;&#x5316;&#x4E4B;&#x5916;&#x90FD;&#x662F;</li>
+<li>&#x5FAA;&#x73AF;&#x4F18;&#x5316;-&#x5BF9;&#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x5B9E;&#x65BD;&#x7684;&#x4F18;&#x5316;</li>
+</ol>
+</li>
+<li>&#x4E0E;&#x673A;&#x5668;&#x6709;&#x5173;&#x7684;&#x4F18;&#x5316;&#xFF08;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x7EA7;&#x4E0A;&#x7684;&#x4F18;&#x5316;&#xFF09;
+<ol>
+<li>&#x5BC4;&#x5B58;&#x5668;&#x5206;&#x914D;&#x7684;&#x4F18;&#x5316;</li>
+<li>&#x6D88;&#x9664;&#x65E0;&#x7528;&#x4EE3;&#x7801;</li>
+</ol>
+</li>
+</ol>
+<h2 class="mume-header" id="%E5%B1%80%E9%83%A8%E4%BC%98%E5%8C%96">&#x5C40;&#x90E8;&#x4F18;&#x5316;</h2>
+
+<h3 class="mume-header" id="%E5%B8%B8%E8%A7%81%E7%9A%84%E5%B1%80%E9%83%A8%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95">&#x5E38;&#x89C1;&#x7684;&#x5C40;&#x90E8;&#x4F18;&#x5316;&#x65B9;&#x6CD5;</h3>
+
+<ol>
+<li>&#x5E38;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x8282;&#x7701;&#xFF08;&#x5E38;&#x6570;&#x5408;&#x5E76;&#xFF09;<br>
+&#x5982;a=5+3&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#x4E3A;a=8</li>
+<li>&#x516C;&#x5171;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x8282;&#x7701;&#xFF08;&#x5220;&#x9664;&#x591A;&#x4F59;&#x8FD0;&#x7B97;&#xFF09;<br>
+&#x5982;a=b<em>d+1; e=b</em>d-2;  e<em>d&#x662F;&#x516C;&#x5171;&#x8868;&#x8FBE;&#x5F0F;<br>
+&#x53EF;&#x4F18;&#x5316;&#x4E3A;t=b</em>d<br>
+&#x82E5;b=b<em>d+1; e=b</em>d-2; &#x5219;b*d&#x4E0D;&#x662F;&#x516C;&#x5171;&#x8868;&#x8FBE;&#x5F0F;</li>
+<li>&#x5220;&#x9664;&#x65E0;&#x7528;&#x8D4B;&#x503C;<br>
+&#x5982;a=b+c;x=d-e;y=b;a=e-h/5 &#x5219;a=b+c&#x662F;&#x65E0;&#x7528;&#x8D4B;&#x503C;</li>
+<li>&#x4E0D;&#x53D8;&#x8868;&#x8FBE;&#x5F0F;&#x5916;&#x63D0;&#xFF08;&#x5FAA;&#x73AF;&#x4F18;&#x5316;&#x4E4B;&#x4E00;&#xFF09;<br>
+&#x628A;&#x5FAA;&#x73AF;&#x4E0D;&#x53D8;&#x8FD0;&#x7B97;&#xFF0C;&#x63D0;&#x5230;&#x5FAA;&#x73AF;&#x5916;<br>
+&#x5982;i=1;while(i&lt;100){x=(k+a)/i;...;i++}</li>
+<li>&#x6D88;&#x51CF;&#x8FD0;&#x7B97;&#x5F3A;&#x5EA6;&#xFF08;&#x5FAA;&#x73AF;&#x4F18;&#x5316;&#x4E4B;&#x4E8C;&#xFF09;<br>
+&#x628A;&#x8FD0;&#x7B97;&#x5F3A;&#x5EA6;&#x5927;&#x7684;&#x8FD0;&#x7B97;&#x6362;&#x7B97;&#x6210;&#x5F3A;&#x5EA6;&#x5C0F;&#x7684;&#x8FD0;&#x7B97;</li>
+</ol>
+<h3 class="mume-header" id="%E5%9F%BA%E6%9C%AC%E5%9D%97%E5%8F%8A%E5%85%B6%E5%88%92%E5%88%86">&#x57FA;&#x672C;&#x5757;&#x53CA;&#x5176;&#x5212;&#x5206;</h3>
+
+<p>&#x5C40;&#x90E8;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x4EE5;&#x57FA;&#x672C;&#x5757;&#x4E3A;&#x5355;&#x4F4D;&#x8FDB;&#x884C;<br>
+&#x57FA;&#x672C;&#x5757;&#x662F;&#x7A0B;&#x5E8F;&#x4E2D;&#x4E00;&#x6BB5;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;&#x5E8F;&#x5217;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x548C;&#x4E00;&#x4E2A;&#x51FA;&#x53E3;</p>
+<ol>
+<li>&#x786E;&#x5B9A;&#x5165;&#x53E3;&#x8BED;&#x53E5;
+<ol>
+<li>&#x7A0B;&#x5E8F;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x6216;&#x8F6C;&#x5411;&#x8BED;&#x53E5;&#x8F6C;&#x79FB;&#x5230;&#x7684;&#x8BED;&#x53E5;</li>
+<li>&#x7D27;&#x8DDF;&#x5728;&#x8F6C;&#x5411;&#x8BED;&#x53E5;&#x540E;&#x9762;&#x7684;&#x8BED;&#x53E5;</li>
+</ol>
+</li>
+<li>&#x786E;&#x5B9A;&#x51FA;&#x53E3;&#x8BED;&#x53E5;
+<ol>
+<li>&#x4E0B;&#x4E00;&#x4E2A;&#x5165;&#x53E3;&#x8BED;&#x53E5;&#x7684;&#x524D;&#x5BFC;&#x8BED;&#x53E5;</li>
+<li>&#x8F6C;&#x5411;&#x8BED;&#x53E5;</li>
+<li>&#x505C;&#x8BED;&#x53E5;</li>
+</ol>
+</li>
+</ol>
+<h3 class="mume-header" id="%E4%BC%98%E5%8C%96%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9">&#x4F18;&#x5316;&#x7684;&#x57FA;&#x672C;&#x5185;&#x5BB9;</h3>
+
+<ol>
+<li>&#x5E38;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x8282;&#x7701;
+<ol>
+<li>&#x5148;&#x8BA1;&#x7B97;&#x51FA;&#x5E38;&#x503C;&#x7684;&#x503C;</li>
+<li>&#x5C06;&#x5E38;&#x503C;&#x7684;&#x53D8;&#x91CF;&#x7528;&#x5E38;&#x503C;&#x4EE3;&#x66FF;</li>
+</ol>
+</li>
+<li>&#x516C;&#x5171;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x8282;&#x7701;
+<ol>
+<li>&#x627E;&#x516C;&#x5171;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5EFA;&#x7ACB;&#x7ED3;&#x679C;&#x53D8;&#x91CF;&#x7B49;&#x4EF7;&#x5173;&#x7CFB;</li>
+<li>&#x7528;&#x8001;&#x53D8;&#x91CF;&#x6765;&#x4EE3;&#x66FF;&#x65B0;&#x53D8;&#x91CF;</li>
+</ol>
+</li>
+<li>&#x5220;&#x9664;&#x65E0;&#x7528;&#x8D4B;&#x503C;
+<ol>
+<li>&#x786E;&#x8BA4;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4E24;&#x4E2A;&#x8D4B;&#x503C;&#x70B9;&#x95F4;&#x65E0;&#x5F15;&#x7528;&#x70B9;</li>
+<li>&#x524D;&#x4E00;&#x8D4B;&#x503C;&#x70B9;&#x4E3A;&#x65E0;&#x7528;&#x8D4B;&#x503C;</li>
+</ol>
+</li>
+</ol>
+<h3 class="mume-header" id="%E5%9F%BA%E4%BA%8Edag%E7%9A%84%E5%B1%80%E9%83%A8%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95">&#x57FA;&#x4E8E;DAG&#x7684;&#x5C40;&#x90E8;&#x4F18;&#x5316;&#x65B9;&#x6CD5;</h3>
+
+<p>DAG&#x662F;&#x6307;&#x65E0;&#x73AF;&#x6709;&#x5411;&#x56FE;&#xFF0C;&#x6240;&#x6709;&#x7BAD;&#x5934;&#x90FD;&#x5411;&#x4E0B;&#x3002;&#x8FD9;&#x91CC;&#x7528;&#x6765;&#x5BF9;&#x57FA;&#x672C;&#x5757;&#x5185;&#x7684;&#x56DB;&#x5143;&#x5F0F;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x4F18;&#x5316;</p>
+<ol>
+<li>DAG&#x7684;&#x7ED3;&#x70B9;&#x5185;&#x5BB9;&#x53CA;&#x5176;&#x8868;&#x793A;<br>
+ni:&#x7ED3;&#x70B9;&#x7684;&#x7F16;&#x7801; &#x3C9;&#xFF1A;&#x8FD0;&#x7B97;&#x7B26;<br>
+M&#xFF1A;&#x4E3B;&#x6807;&#x8BB0;&#xFF08;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x53D8;&#x91CF;&#xFF0C;&#x53F6;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x662F;&#x53D8;&#x91CF;&#x6216;&#x5E38;&#x6570;&#x7684;&#x521D;&#x503C;&#xFF09;<br>
+Ai&#xFF1A;&#x9644;&#x52A0;&#x6807;&#x8BB0;&#xFF08;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x53D8;&#x91CF;&#xFF0C;&#x8868;&#x793A;&#x5B83;&#x5177;&#x6709;&#x8BE5;&#x7ED3;&#x70B9;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x8BBE;&#x7F6E;&#x591A;&#x4E2A;&#xFF09;<br>
+&#x540E;&#x7EE7;&#x662F;&#x8FD0;&#x7B97;&#x5BF9;&#x8C61;&#x3001;&#x524D;&#x9A71;&#x662F;&#x8C03;&#x7528;&#x7684;</li>
+<li>&#x5355;&#x4E2A;&#x56DB;&#x5143;&#x5F0F;&#x7684;DAG&#x8868;&#x793A;<br>
+&#x8D4B;&#x503C;A=B &#x7528;DAG&#x8868;&#x793A;&#xFF1A;ni B|A<br>
+&#x53CC;&#x76EE;&#x8FD0;&#x7B97; A=B&#x3C9;C<br>
+&#x5355;&#x76EE;&#x8FD0;&#x7B97;<br>
+&#x6570;&#x7EC4;&#x53D8;&#x91CF;&#x8D4B;&#x503C;&#x8FD0;&#x7B97;A=B[C]<br>
+&#x8F6C;&#x5411;&#x8BED;&#x53E5;</li>
+</ol>
+<p>DAG&#x683C;&#x5F0F;&#x4E0D;&#x5173;&#x952E;&#xFF0C;&#x6700;&#x7EC8;&#x76EE;&#x7684;&#x662F;&#x8981;&#x5F97;&#x5230;&#x4F18;&#x5316;&#x540E;&#x7684;&#x56DB;&#x5143;&#x5F0F;&#x5E8F;&#x5217;</p>
+<ol>
+<li>&#x6784;&#x9020;&#x57FA;&#x672C;&#x5757;&#x5185;&#x4F18;&#x5316;&#x7684;DAG</li>
+</ol>
+<h1 class="mume-header" id="chapter-8-%E7%9B%AE%E6%A0%87%E4%BB%A3%E7%A0%81%E5%8F%8A%E5%85%B6%E7%94%9F%E6%88%90">Chapter 8 &#x76EE;&#x6807;&#x4EE3;&#x7801;&#x53CA;&#x5176;&#x751F;&#x6210;</h1>
+
+<p>&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x662F;&#x7F16;&#x8BD1;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: g Pages: 1 -->
+<svg width="110pt" height="188pt" viewBox="0.00 0.00 109.99 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>g</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-184 105.9881,-184 105.9881,4 -4,4"/>
+<!-- 中间代码 -->
+<g id="node1" class="node">
+<title>&#x4E2D;&#x95F4;&#x4EE3;&#x7801;</title>
+<ellipse fill="none" stroke="#000000" cx="50.994" cy="-162" rx="50.9881" ry="18"/>
+<text text-anchor="middle" x="50.994" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#x4E2D;&#x95F4;&#x4EE3;&#x7801;</text>
+</g>
+<!-- 目标生成 -->
+<g id="node2" class="node">
+<title>&#x76EE;&#x6807;&#x751F;&#x6210;</title>
+<ellipse fill="none" stroke="#000000" cx="50.994" cy="-90" rx="42.9228" ry="18"/>
+<text text-anchor="middle" x="50.994" y="-85.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#x76EE;&#x6807;&#x751F;&#x6210;</text>
+</g>
+<!-- 中间代码&#45;&gt;目标生成 -->
+<g id="edge1" class="edge">
+<title>&#x4E2D;&#x95F4;&#x4EE3;&#x7801;-&gt;&#x76EE;&#x6807;&#x751F;&#x6210;</title>
+<path fill="none" stroke="#000000" d="M50.994,-143.8314C50.994,-136.131 50.994,-126.9743 50.994,-118.4166"/>
+<polygon fill="#000000" stroke="#000000" points="54.4941,-118.4132 50.994,-108.4133 47.4941,-118.4133 54.4941,-118.4132"/>
+</g>
+<!-- 目标代码 -->
+<g id="node3" class="node">
+<title>&#x76EE;&#x6807;&#x4EE3;&#x7801;</title>
+<ellipse fill="none" stroke="#000000" cx="50.994" cy="-18" rx="47.5807" ry="18"/>
+<text text-anchor="middle" x="50.994" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">&#x76EE;&#x6807;&#x4EE3;&#x7801;</text>
+</g>
+<!-- 目标生成&#45;&gt;目标代码 -->
+<g id="edge2" class="edge">
+<title>&#x76EE;&#x6807;&#x751F;&#x6210;-&gt;&#x76EE;&#x6807;&#x4EE3;&#x7801;</title>
+<path fill="none" stroke="#000000" d="M50.994,-71.8314C50.994,-64.131 50.994,-54.9743 50.994,-46.4166"/>
+<polygon fill="#000000" stroke="#000000" points="54.4941,-46.4132 50.994,-36.4133 47.4941,-46.4133 54.4941,-46.4132"/>
+</g>
+</g>
+</svg>
+</p><h2 class="mume-header" id="%E7%9B%AE%E6%A0%87%E4%BB%A3%E7%A0%81%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98">&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x9009;&#x62E9;&#x95EE;&#x9898;</h2>
+
+<p>&#x5927;&#x591A;&#x6570;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x4E0D;&#x4EA7;&#x751F;&#x7EDD;&#x5BF9;&#x5730;&#x5740;&#x7684;&#x673A;&#x5668;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x662F;&#x4EE5;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7A0B;&#x5E8F;&#x4F5C;&#x4E3A;&#x8F93;&#x51FA;<br>
+&#x6B64;&#x5916;&#xFF0C;&#x6307;&#x4EE4;&#x96C6;&#x7684;&#x9009;&#x62E9;&#x4EE5;&#x53CA;&#x6307;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x95EE;&#x9898;&#x90FD;&#x662F;&#x91CD;&#x8981;&#x56E0;&#x7D20;<br>
+&#x4E3A;&#x4E86;&#x4F7F;&#x7B97;&#x6CD5;&#x5177;&#x6709;&#x901A;&#x7528;&#x6027;&#xFF0C;&#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x7684;&#x662F;</p>
+<h3 class="mume-header" id="%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8F%8A%E5%85%B6%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">&#x865A;&#x62DF;&#x673A;&#x53CA;&#x5176;&#x6307;&#x4EE4;&#x7CFB;&#x7EDF;</h3>
+
+<ul>
+<li>&#x865A;&#x62DF;&#x673A;&#x5BC4;&#x5B58;&#x5668; R0,R1,...,Rn-1</li>
+<li>&#x865A;&#x62DF;&#x673A;&#x6307;&#x4EE4;&#x7CFB;&#x7EDF;
+<ul>
+<li>&#x6307;&#x4EE4;&#x7684;&#x57FA;&#x672C;&#x5F62;&#x5F0F; op Ri,Rj/M</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">&#x5E38;&#x7528;&#x6307;&#x4EE4;</h4>
+
+<ul>
+<li>&#x53D6;&#x3001;&#x5B58;<br>
+LD Ri,Rj/M ...... Ri=(Rj/M)<br>
+ST Ri,Rj/M ...... Rj/M=(Ri)</li>
+<li>&#x8F6C;&#x5411;<br>
+FJ Ri,M<br>
+TJ Ri,M<br>
+JMP_,M</li>
+<li>&#x7B97;&#x672F;&#x8FD0;&#x7B97;<br>
+ADD Ri,Rj/M</li>
+<li>&#x5173;&#x7CFB;&#x903B;&#x8F91;&#x8FD0;&#x7B97;</li>
+</ul>
+<h3 class="mume-header" id="%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%9E%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F">&#x6D3B;&#x8DC3;&#x53D8;&#x91CF;&#x4E0E;&#x975E;&#x6D3B;&#x8DC3;&#x53D8;&#x91CF;</h3>
+
+<ol>
+<li>&#x53D8;&#x91CF;&#x7684;&#x5B9A;&#x4E49;&#x70B9;&#x548C;&#x5E94;&#x7528;&#x70B9;<br>
+&#x56DB;&#x5143;&#x5F0F; q(omega B C A) BC&#x7684;&#x5E94;&#x7528;&#x70B9;q&#xFF0C;A&#x7684;&#x5B9A;&#x4E49;&#x70B9;q</li>
+<li>&#x6D3B;&#x8DC3;&#x53D8;&#x91CF;&#x4E0E;&#x975E;&#x6D3B;&#x8DC3;&#x53D8;&#x91CF;<br>
+&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4ECE;&#x67D0;&#x65F6;&#x523B;q&#x8D77;&#xFF0C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5B9A;&#x4E49;&#x70B9;&#x6B62;&#xFF0C;&#x5176;&#x95F4;&#x82E5;&#x6709;&#x5E94;&#x7528;&#x70B9;&#xFF0C;&#x5219;&#x79F0;&#x8BE5;&#x53D8;&#x91CF;&#x5728;q&#x662F;&#x6D3B;&#x8DC3;&#x7684;(y)&#xFF0C;&#x5426;&#x5219;&#x79F0;&#x8BE5;&#x53D8;&#x91CF;&#x5728;q&#x662F;&#x975E;&#x6D3B;&#x8DC3;&#x7684;(n)</li>
+</ol>
+<p>&#x5047;&#x5B9A;</p>
+<ol>
+<li>&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#x5728;&#x57FA;&#x672C;&#x5757;&#x51FA;&#x53E3;&#x540E;&#x662F;&#x975E;&#x6D3B;&#x8DC3;&#x7684;</li>
+<li>&#x975E;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#x5728;&#x57FA;&#x672C;&#x5757;&#x51FA;&#x53E3;&#x540E;&#x662F;&#x975E;&#x6D3B;&#x8DC3;&#x7684;</li>
+</ol>
+<h3 class="mume-header" id="%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98">&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x5206;&#x914D;&#x95EE;&#x9898;</h3>
+
+<p>&#x5BC4;&#x5B58;&#x5668;&#x64CD;&#x4F5C;&#x5FEB;&#x4E14;&#x6307;&#x4EE4;&#x77ED;&#xFF0C;&#x5982;&#x4F55;&#x5145;&#x5206;&#x5229;&#x7528;&#x5B83;</p>
+<ol>
+<li>&#x8BBE;&#x7F6E;&#x63CF;&#x8FF0;&#x8868;&#xFF0C;&#x8BB0;&#x5F55;&#x5BC4;&#x5B58;&#x5668;&#x548C;&#x53D8;&#x91CF;&#x7684;&#x5F53;&#x524D;&#x72B6;&#x6001;
+<ol>
+<li>&#x67D0;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x4FDD;&#x7559;&#x7740;&#x54EA;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x503C;</li>
+<li>&#x67D0;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x662F;&#x5728;&#x67D0;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x8FD8;&#x662F;&#x5728;&#x5185;&#x5B58;&#x4E2D;</li>
+</ol>
+</li>
+<li>&#x5BC4;&#x5B58;&#x5668;&#x5206;&#x914D;&#x89C4;&#x5219;&#xFF1A;&#x8BBE;&#x5F53;&#x524D;&#x56DB;&#x5143;&#x5F0F;&#xFF1A;q:A=B&#x3C9;C
+<ol>
+<li>&#x4E3B;&#x52A8;&#x91CA;&#x653E; &#x5982;&#x679C;B&#x5DF2;&#x7ECF;&#x5728;&#x5BC4;&#x5B58;&#x5668;Ri&#x4E2D;&#xFF0C;&#x5219;&#x9009;&#x62E9;Ri&#xFF1A;
+<ul>
+<li>&#x82E5;B&#x6D3B;&#x8DC3;&#xFF0C;&#x5219;&#x8981;&#x4FDD;&#x5B58;B&#x7684;&#x503C;&#xFF0C;&#x65B9;&#x6CD5;&#x662F;&#xFF1A;&#x82E5;&#x6709;&#x7A7A;&#x95F2;&#x7684;&#x5BC4;&#x5B58;&#x5668;Rj&#xFF0C;&#x5219;&#x751F;&#x6210;ST Ri,Rj;<br>
+&#x5426;&#x5219;&#x751F;&#x6210;&#x6307;&#x4EE4;ST Ri,B</li>
+<li>&#x4FEE;&#x6539;&#x63CF;&#x8FF0;&#x8868;&#xFF1A;&#x5728;Ri&#x4E2D;&#x5220;&#x9664;B&#xFF0C;&#x586B;&#x5199;A</li>
+</ul>
+</li>
+<li>&#x9009;&#x7A7A;&#x95F2;&#x8005; &#x4ECE;&#x7A7A;&#x95F2;&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x9009;&#x4E00;Ri<br>
+&#x5E76;&#x628A;A&#x586B;&#x5165;Ri&#x7684;&#x63CF;&#x8FF0;&#x8868;&#x4E2D;</li>
+<li>&#x5F3A;&#x8FEB;&#x91CA;&#x653E; &#x5265;&#x593A;&#x4E00;&#x4E2A;Ri&#xFF0C;&#x5177;&#x4F53;&#x5904;&#x7406;&#x529E;&#x6CD5;&#x540C;&#x89C4;&#x5219;1</li>
+</ol>
+</li>
+</ol>
+<h3 class="mume-header" id="%E7%9B%AE%E6%A0%87%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E9%97%AE%E9%A2%98">&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x95EE;&#x9898;</h3>
+
+<p>&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x662F;&#x4EE5;&#x57FA;&#x672C;&#x5757;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#xFF0C;&#x5728;&#x751F;&#x6210;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x5982;&#x4E0B;&#x4E09;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x57FA;&#x672C;&#x5757;&#x5F00;&#x59CB;&#x65F6;&#x6240;&#x6709;&#x5BC4;&#x5B58;&#x5668;&#x5E94;&#x662F;&#x7A7A;&#x95F2;&#x7684;&#xFF1B;&#x57FA;&#x672C;&#x5757;&#x7ED3;&#x675F;&#x65F6;&#x5E94;&#x91CA;&#x653E;&#x6240;&#x5360;&#x7528;&#x7684;&#x5BC4;&#x5B58;&#x5668;</li>
+<li>&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x88AB;&#x8D4B;&#x503C;&#x65F6;&#xFF0C;&#x8981;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x4FDD;&#x7559;&#x5176;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x8981;&#x586B;&#x5199;&#x76F8;&#x5E94;&#x7684;&#x63CF;&#x8FF0;&#x8868;</li>
+<li>&#x4E3A;&#x4E86;&#x751F;&#x6210;&#x9AD8;&#x6548;&#x7684;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#xFF0C;&#x751F;&#x6210;&#x7B97;&#x6CD5;&#x4E2D;&#x8981;&#x5F15;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x5206;&#x914D;&#x539F;&#x5219;&#x548C;&#x53D8;&#x91CF;&#x7684;&#x6D3B;&#x8DC3;&#x4FE1;&#x606F;</li>
+</ol>
+<h2 class="mume-header" id="%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E8%AE%BE%E8%AE%A1">&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#x8BBE;&#x8BA1;</h2>
+
+<ol>
+<li>&#x751F;&#x6210;&#x73AF;&#x5883;</li>
+</ol>
+<ul>
+<li>&#x865A;&#x62DF;&#x673A;</li>
+<li>&#x8868;&#x3001;&#x533A;&#x548C;&#x6808;</li>
+<li>&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    <script>
+var flowcharts = document.getElementsByClassName('flow')
+for (var i = 0; i < flowcharts.length; i++) {
+  var flow = flowcharts[i]
+  try {
+    var diagram = flowchart.parse(flow.textContent)
+    flow.id = 'flow_' + i
+    flow.innerHTML = ''
+    diagram.drawSVG(flow.id)
+  } catch (error) {
+    flow.innerHTML = '<pre class="language-text">' + error.toString() + '</pre>'
+  }
+}
+</script>
+    
+    
+  
+    </body></html>
