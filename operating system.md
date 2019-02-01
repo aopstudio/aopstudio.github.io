@@ -287,7 +287,7 @@ Process vs Program
 
 进程是资源的拥有者
 线程用来调度任务
-![thread](images/thread.png)
+![thread.png](https://i.postimg.cc/nLzGZvsN/thread.png)
 
 #### 超线程和多核
 ##### 超线程

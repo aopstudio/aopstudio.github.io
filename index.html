@@ -1,15 +1,98 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>笔记收录</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="res/css/main.css">
+    <!--加载meta IE兼容文件-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 </head>
-
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p><a href="squence diagram.html">mermaid时序图示例</a></p>
-<p><a href="编译方法.html">编译方法笔记</a></p>
-<p><a href="operating system.html">操作系统笔记</a></p>
+    <div class="header">
+        <div class="menu-btn">
+            <div class="menu"></div>
+        </div>
+        <h1 class="logo">
+            <a href="index.html">
+                <span>MYBLOG</span>
+                <img src="res/img/logo.png">
+            </a>
+        </h1>
+        <div class="nav">
+            <a href="index.html" class="active">文章</a>
+            <a href="whisper.html">微语</a>
+            <a href="album.html">相册</a>
+            <a href="about.html">关于</a>
+        </div>
+        <p class="welcome-text">
+            欢迎来到<span class="name">程艺</span>的主页~
+        </p>
+    </div>
+
+    <div class="banner">
+        <div class="cont w1000">
+            <div class="title">
+                <h3>Cheng Yi's<br />Homepage</h3>
+                <h4>笔记收录</h4>
+            </div>
+            <div class="amount">
+                <p><span class="text">日志</span><span class="daily-record">6</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="tlinks">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
+    <div class="content">
+        <div class="cont w1000">
+            <div class="title">
+
+            </div>
+            <div class="list-item">
+                <div class="item">
+                    <div class="layui-fluid">
+                        <div class="layui-row">
+                            <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
+                                <div class="img"><img src="../res/img/sy_img1.jpg" alt=""></div>
+                            </div>
+                            <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
+                                <div class="item-cont">
+                                    <h3>编译方法<button class="layui-btn layui-btn-danger new-icon">new</button></h3>
+                                    <h5>课堂笔记</h5>
+                                    <p>词法分析 语法分析 语义分析 优化 目标代码生成</p>
+                                    <a href="html/编译方法.html" class="go-icon"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div id="demo" style="text-align: center;"></div>
+        </div>
+    </div>
+
+    <div class="footer-wrap">
+        <div class="footer w1000">
+            <div class="qrcode">
+                <img src="res/img/erweima.jpg">
+            </div>
+            <div class="practice-mode">
+                <div class="text">
+                    <h4 class="title">我的联系方式</h4>
+                    <p>微信公众号<span class="WeChat">程艺的编程之路</span></p>
+                    <p>动态博客<span class="email"><a href="http://neusoftware.top/solo">程艺的个人博客</a></span></p>
+                    <p>黑客派账号<span class="hacpai">aopstudio</span></p>
+                    <p>Bilibili账号<span class="bilibili">微软索尼任天堂</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
