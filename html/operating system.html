@@ -845,6 +845,7 @@ var gitalk = new Gitalk({
     owner: 'aopstudio',//github用户名
     admin: ['aopstudio'],//github用户名
     labels: ['gitment'],
+	id: location.pathname,
     perPage: 50,
 })
 gitalk.render('gitalk-container')
