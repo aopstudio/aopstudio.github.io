@@ -6,6 +6,8 @@
     <title>Cheng Yi's Homepage</title>
     <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" href="res/css/main.css">
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <!--加载meta IE兼容文件-->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -110,5 +112,20 @@
             </div>
         </div>
     </div>
+	    
+		<div id="gitalk-container"></div>
+	    <script>
+var gitalk = new Gitalk({
+    clientID: 'a782c22c9db1dc03ce02',
+    clientSecret: '097b9db3761373cc651fa0f113d9efd89ba703f2',
+    repo: 'Notes',
+    owner: 'aopstudio',//github用户名
+    admin: ['aopstudio'],//github用户名
+    labels: ['gitment'],
+    perPage: 50,
+})
+gitalk.render('gitalk-container')
+</script>
+    
 </body>
 </html>
