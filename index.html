@@ -33,6 +33,13 @@
             <a href="album.html">相册</a>
             <a href="about.html">关于</a>
         </div>
+		<ul class="layui-nav header-down-nav">
+		  <li class="layui-nav-item"><a href="index.html" class="active">文章</a></li>
+		  <li class="layui-nav-item"><a href="whisper.html">微语</a></li>
+		  <li class="layui-nav-item"><a href="leacots.html">留言</a></li>
+		  <li class="layui-nav-item"><a href="album.html">相册</a></li>
+		  <li class="layui-nav-item"><a href="about.html">关于</a></li>
+		</ul>
         <p class="welcome-text">
             欢迎来到<span class="name">程艺</span>的主页~
         </p>
@@ -101,7 +108,7 @@
     <div class="footer-wrap">
         <div class="footer w1000">
             <div class="qrcode">
-                <img src="res/img/erweima.jpg">
+                <img src="res/img/blog.png" style="width:200px">
             </div>
             <div class="practice-mode">
                 <div class="text">
@@ -115,19 +122,19 @@
         </div>
     </div>
 	    
-		<div id="gitalk-container"></div>
-	    <script>
-var gitalk = new Gitalk({
-    clientID: 'a782c22c9db1dc03ce02',
-    clientSecret: '097b9db3761373cc651fa0f113d9efd89ba703f2',
-    repo: 'Notes',
-    owner: 'aopstudio',//github用户名
-    admin: ['aopstudio'],//github用户名
-    labels: ['gitment'],
-    perPage: 50,
-})
-gitalk.render('gitalk-container')
-</script>
+	<div id="gitalk-container"></div>
+	<script>
+		var gitalk = new Gitalk({
+			clientID: 'a782c22c9db1dc03ce02',
+			clientSecret: '097b9db3761373cc651fa0f113d9efd89ba703f2',
+			repo: 'Notes',
+			owner: 'aopstudio',//github用户名
+			admin: ['aopstudio'],//github用户名
+			labels: ['gitment'],
+			perPage: 50,
+		})
+		gitalk.render('gitalk-container')
+	</script>
     
 </body>
 </html>
