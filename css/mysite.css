@@ -1,3 +1,4 @@
 div#gitalk-container {
-	margin:0 18%;
+	margin:0 auto;
+	max-width: 85%;
 }
