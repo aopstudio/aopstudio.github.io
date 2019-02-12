@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -105,69 +105,21 @@
             </div>
         </div>
     </div>
-
-    <!--
-    <div class="banner">
-        <div class="cont w1000">
-            <div class="title">
-                <h3>Cheng Yi's<br />Homepage</h3>
-                <h4>笔记收录</h4>
-            </div>
-            <div class="amount">
-                <p><span class="text">日志</span><span class="daily-record">6</span></p>
-            </div>
-        </div>
+    <div class="container">
+        <div id="gitalk-container"></div>
+        <script>
+            var gitalk = new Gitalk({
+                clientID: 'a782c22c9db1dc03ce02',
+                clientSecret: '097b9db3761373cc651fa0f113d9efd89ba703f2',
+                repo: 'Notes',
+                owner: 'aopstudio',//github用户名
+                admin: ['aopstudio'],//github用户名
+                labels: ['gitment'],
+                perPage: 50,
+            })
+            gitalk.render('gitalk-container')
+        </script>
     </div>
-    <div class="tlinks">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
-    -->
-    <div class="content">
-        <div class="cont w1000">
-            <div class="title">
-
-            </div>
-            <div class="list-item">
-                <div class="item">
-                    <div class="layui-fluid">
-                        <div class="layui-row">
-                            <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
-                                <div class="img"><img src="https://raw.githubusercontent.com/ZingHD/Markdown_picture/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%94%B5%E5%AD%90%E4%B9%A6/Snipaste_2018-05-14_15-11-41.png" alt="" style="width:300px"></div>
-                            </div>
-                            <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
-                                <div class="item-cont">
-                                    <h3>操作系统<button class="layui-btn layui-btn-danger new-icon">new</button></h3>
-                                    <h5>复习笔记</h5>
-                                    <p>进程 同步 调度 死锁 内存管理 文件系统 I/O设备</p>
-                                    <a href="html/operating system.html" class="go-icon"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="list-item">
-                <div class="item">
-                    <div class="layui-fluid">
-                        <div class="layui-row">
-                            <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
-                                <div class="img"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549084748207&di=dd4d8d3cf2e05262b4e431aba72ce6e2&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Fsoulmachine%2Fpic%2Fitem%2F60c477278814b904908f9dc0.jpg" alt="" style="width:300px"></div>
-                            </div>
-                            <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
-                                <div class="item-cont">
-                                    <h3>编译方法<button class="layui-btn layui-btn-danger new-icon">new</button></h3>
-                                    <h5>课堂笔记</h5>
-                                    <p>词法分析 语法分析 语义分析 优化 目标代码生成</p>
-                                    <a href="html/编译方法.html" class="go-icon"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="demo" style="text-align: center;"></div>
-        </div>
-    </div>
-
     <div class="footer-wrap">
         <div class="footer w1000">
             <div class="qrcode">
@@ -185,19 +137,7 @@
         </div>
     </div>
 	    
-	<div id="gitalk-container"></div>
-	<script>
-		var gitalk = new Gitalk({
-			clientID: 'a782c22c9db1dc03ce02',
-			clientSecret: '097b9db3761373cc651fa0f113d9efd89ba703f2',
-			repo: 'Notes',
-			owner: 'aopstudio',//github用户名
-			admin: ['aopstudio'],//github用户名
-			labels: ['gitment'],
-			perPage: 50,
-		})
-		gitalk.render('gitalk-container')
-	</script>
+
     
 </body>
 </html>
