@@ -48,7 +48,7 @@
         </p>
     </div>-->
 
-    <div class="jumbotron text-center" style="margin-bottom:0">
+    <div class="jumbotron text-center" style="padding: 0; margin: 0;">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -97,7 +97,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="col-md-3"><a href="#">文章</a></li>
+                    <li class="col-md-3"><a href="/">文章</a></li>
                     <li class="col-md-3"><a href="smalltalk.html">微语</a></li>
                     <li class="col-md-3"><a href="message.html">留言</a></li>
                     <li class="col-md-3"><a href="about.html">关于</a></li>
@@ -120,53 +120,69 @@
     </div>
     <div class="tlinks">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
     -->
-    <div class="content">
-        <div class="cont w1000">
-            <div class="title">
-
-            </div>
-            <div class="list-item">
-                <div class="item">
-                    <div class="layui-fluid">
-                        <div class="layui-row">
-                            <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
-                                <div class="img"><img src="https://raw.githubusercontent.com/ZingHD/Markdown_picture/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%94%B5%E5%AD%90%E4%B9%A6/Snipaste_2018-05-14_15-11-41.png" alt="" style="width:300px"></div>
-                            </div>
-                            <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
-                                <div class="item-cont">
-                                    <h3>操作系统<button class="layui-btn layui-btn-danger new-icon">new</button></h3>
-                                    <h5>复习笔记</h5>
-                                    <p>进程 同步 调度 死锁 内存管理 文件系统 I/O设备</p>
-                                    <a href="html/operating system.html" class="go-icon"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <a href="html/operating system.html"><h3 style="margin-top:10px">操作系统</h3></a> 
+                </div>
+                <div class="small text-muted">
+                    计算机系统的内核与基石
                 </div>
             </div>
-
-            <div class="list-item">
-                <div class="item">
-                    <div class="layui-fluid">
-                        <div class="layui-row">
-                            <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
-                                <div class="img"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549084748207&di=dd4d8d3cf2e05262b4e431aba72ce6e2&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Fsoulmachine%2Fpic%2Fitem%2F60c477278814b904908f9dc0.jpg" alt="" style="width:300px"></div>
-                            </div>
-                            <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
-                                <div class="item-cont">
-                                    <h3>编译方法<button class="layui-btn layui-btn-danger new-icon">new</button></h3>
-                                    <h5>课堂笔记</h5>
-                                    <p>词法分析 语法分析 语义分析 优化 目标代码生成</p>
-                                    <a href="html/编译方法.html" class="go-icon"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="panel-body">
+                <div class="col-sm-3">
+                    <img src="https://raw.githubusercontent.com/ZingHD/Markdown_picture/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%94%B5%E5%AD%90%E4%B9%A6/Snipaste_2018-05-14_15-11-41.png" alt="" class="img-responsive">
+                </div>
+                <div class="col-sm-9" >
+                    <ul class="list-group">
+                        <li class="list-group-item">Introduction</li>
+                        <li class="list-group-item">Process & thread</li>
+                        <li class="list-group-item">Process Synchronization</li>
+                        <li class="list-group-item">CPU Scheduling</li>
+                        <li class="list-group-item">Deadlock</li>
+                        <li class="list-group-item">Storage management</li>
+                    </ul>
                 </div>
             </div>
-            <div id="demo" style="text-align: center;"></div>
+            <div class="panel-footer">
+                <div class="small text-muted">
+                    更新于2019/2/13 9:44
+                </div>            
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <a href="html/编译方法.html"><h3 style="margin-top:10px">编译方法</h3></a> 
+                </div>
+                <div class="small text-muted">
+                    追寻程序设计语言的本质
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-3">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549084748207&di=dd4d8d3cf2e05262b4e431aba72ce6e2&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Fsoulmachine%2Fpic%2Fitem%2F60c477278814b904908f9dc0.jpg" alt="" class="img-responsive">
+                </div>
+                <div class="col-sm-9" >
+                    <ul class="list-group">
+                        <li class="list-group-item">词法分析</li>
+                        <li class="list-group-item">语法分析</li>
+                        <li class="list-group-item">语义分析</li>
+                        <li class="list-group-item">优化</li>
+                        <li class="list-group-item">目标代码生成</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="small text-muted">
+                    更新于2019/2/13 10:48
+                </div>            
+            </div>
         </div>
     </div>
+
 
     <div class="footer-wrap">
         <div class="footer w1000">
