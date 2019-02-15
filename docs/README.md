@@ -5,8 +5,16 @@
 * OS是个软件
 ——一个虚拟化计算机的程序
 
-
-![os](images/os.png)
+```dot
+digraph g{
+    App[label="Application"]
+    OS[label="Operating System"]
+    App->OS->App
+    OS->CPU->OS
+    OS->Memory->OS
+    OS->Devices->OS
+}
+```
 
 OS的作用：
 * 物理机层面（CPU Memory Devices）：分配资源
@@ -165,6 +173,7 @@ I/O系统包含
     * 堆
     * 文本
     * 数据
+
 #### 什么是程序 Program
 一个程序包含
 - Code
@@ -195,6 +204,7 @@ Process vs Program
 dot语言画进程状态图如下
 ```dot
 digraph states{
+    splines=true
     new->ready[label=admitted]
     ready->running[label="scheduler dispatch"]
     running->terminated[label=exit]
@@ -319,7 +329,7 @@ digraph hyper_threading{
     lp2->table:r2
 }
 ```
-![hyper-threading](images/hyper_threading.png)
+
 ##### 多核
 ```dot
 digraph multicore{
@@ -349,7 +359,7 @@ digraph multicore{
     pp2->table:r2
 }
 ```
-![multicore](images/multicore.png)
+
 #### 两类线程
 - 用户线程
     用户层级
@@ -673,7 +683,7 @@ monitor monitor-name {
 - x.wait() 进程挂起
 - x.signal() 被挂起的进程重新活动
 
-![condition](https://img-blog.csdn.net/20180417230502989?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRHlsYW5fRnJhbms=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![condition](images/condition.png)
 ##### 注意
 这里的wait和P操作是不一样的，最大的不同就是他一定会将自己阻塞同时释放锁。而signal如果没有等待线程相当于一个空操作。而且numWaiting 不可能为负数
 
@@ -911,28 +921,28 @@ consumer ()
 * 周转周期=结束时间-到达时间
 * 带权周转时间=周转时间/服务时间
 
-例子
-![situation](https://img-blog.csdn.net/20180121005045274?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGllbWlueWFvMTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+例子  
+![situation](images/situation.png)
 ### FCFS
 FCFS最简单，是非抢占式的
 
 进程按照请求CPU的顺序排序
 
-上述例子解决图
-![graph1](https://img-blog.csdn.net/20180121005129300?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGllbWlueWFvMTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+上述例子解决图  
+![graph1](images/graph1.png)
 
-表格
-![sheet1](https://img-blog.csdn.net/20180121005206006?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGllbWlueWFvMTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+表格  
+![sheet1](images/sheet1.png)
 ### SJF
 如果运行时间事先已知，可以每次挑选最短的任务以避免convoy effect(护航效应，即小进程等待大进程释放)
 
 也是非抢占式的。
 
-例子图
-![graph2](https://img-blog.csdn.net/20180121005249291?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGllbWlueWFvMTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+例子图  
+![graph2](images/graph2.png)
 例子中A运行结束时间为3，这时只有B进程等待。所以A运行结束后直接运行B。B结束后时间点到9，CDE都在等待。这个时候就选择服务时间最少的E，然后是较少的C，最后是D。
-以表格的形式展示：
-![sheet2](https://img-blog.csdn.net/20180121005319025?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGllbWlueWFvMTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+以表格的形式展示：  
+![sheet2](images/sheet2.png)
 
 #### SJF的优点
 可以证明**SJF是最优的**
@@ -946,8 +956,8 @@ SRTF是抢占式的，有时也被称为抢占式的SJF
 * 当前剩余运行时间最短的进程被挑出来
 * 如果新到达进程的CPU Burst time比当前执行进程的要短，则抢占
 
-例子图
-![graph3](https://img-blog.csdn.net/20180121005401910?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGllbWlueWFvMTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+例子图  
+![graph3](images/graph3.png)
 
 1. A先运行至2，B到达等待。
 2. A运行到3结束，B开始运行。
@@ -957,8 +967,8 @@ SRTF是抢占式的，有时也被称为抢占式的SJF
 6. C运行结束，B开始运行。
 7. B运行结束，D开始运行。
 
-表格形式：
-![sheet3](https://img-blog.csdn.net/20180121005423134?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGllbWlueWFvMTIz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+表格形式：  
+![sheet3](images/sheet3.png)
 
 ### Three-Level Scheduling 三级调度
 ![tls](http://assets.processon.com/chart_image/5c53a8f1e4b056ae2a03252d.png)
@@ -1117,14 +1127,14 @@ claim edge 变成 assignment edge后，图中不能有环
 * 当一个进程得到所有所需资源后，它必须在有限时间内归还
 
 例子：
-![banker](https://img-blog.csdn.net/20180508210408944)
+![banker](images/banker.png)
 问：
 1. 该状态是否安全？
 2. 若进程P2提出请求Request（1，2，2，2）后，系统能否将资源分配给它？
 
 答：
 1. 利用安全性算法对上面的状态进行分析（见下表），找到了一个安全序列{P0,P3,P4,P1,P2}，故系统是安全的。
-![answer](https://img-blog.csdn.net/20180508210518867)
+![answer](images/answer.png)
 2. P2发出请求向量Request(1,2,2,2),系统按银行家算法进行检查：
     1. Request2(1,2,2,2)<=Need2(2,3,5,6)
     2. Request2(1,2,2,2)<=Available(1,6,2,2)
