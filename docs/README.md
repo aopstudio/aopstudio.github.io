@@ -415,7 +415,10 @@ Non-blocking和blocking receive是最常见的
 link的消息队列容量
 - Zero capacity 队列长度=0
 - Bounded capacity 队列长度=n
-- Unbounded capacity 队列长度=$\infty$
+- Unbounded capacity 队列长度=
+```tex 
+\infty
+```
 
 ### Critical-Section Problem 临界区问题
 对于共享数据的并行访问可能导致数据的不一致
@@ -948,7 +951,11 @@ FCFS最简单，是非抢占式的
 可以证明**SJF是最优的**
 避免了护航效应（convoy effect）
 #### SJF的缺点
-难以得知下次CPU请求的长度，只能预测。一般通过数学期望 $t_{n+1}=at_{n}+(1-a)t_{n}$ 来确定
+难以得知下次CPU请求的长度，只能预测。一般通过数学期望 
+```tex
+t_{n+1}=at_{n}+(1-a)t_{n}
+```
+ 来确定
 
 ### SRTF
 SRTF是抢占式的，有时也被称为抢占式的SJF
@@ -971,7 +978,7 @@ SRTF是抢占式的，有时也被称为抢占式的SJF
 ![sheet3](images/sheet3.png)
 
 ### Three-Level Scheduling 三级调度
-![tls](http://assets.processon.com/chart_image/5c53a8f1e4b056ae2a03252d.png)
+![tls](https://www.processon.com/chart_image/id/5c53a8f1e4b056ae2a03252a.png)
 
 ## CPU Scheduling 2
 重点讨论
@@ -1167,8 +1174,8 @@ digraph wait {
 #### 每种资源类型有多个实例
 算法使用了一些随时间变化的数据结构，和银行家算法类型
 - Availabel: 长度为m的向量，表示各种进程的可用实例
-- Allocation: $n \times m$矩阵，表示当前各进程的资源分配情况
-- Request: $n \times m$矩阵，表示当各进程的资源请求情况
+- Allocation: n*m矩阵，表示当前各进程的资源分配情况
+- Request: n*m矩阵，表示当各进程的资源请求情况
 
 和银行家算法类似
 
