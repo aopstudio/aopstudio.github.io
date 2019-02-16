@@ -1,10 +1,6 @@
-# docsify
+# 毛泽东思想和中国特色社会理论体系概论
 
-> A magical documentation site generator.
-
-* Simple and lightweight (~12kb gzipped)
-* Multiple themes
-* Not build static html files
+> 马克思主义中国化的成果
 
 [GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](#introduction-1)
+[Get Started](#考纲)

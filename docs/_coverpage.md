@@ -1,10 +1,7 @@
-# docsify
+# 操作系统
 
-> A magical documentation site generator.
+> 计算机系统的核心
 
-* Simple and lightweight (~12kb gzipped)
-* Multiple themes
-* Not build static html files
 
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/aopstudio/Notes)
 [Get Started](#introduction-1)
