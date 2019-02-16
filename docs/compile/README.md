@@ -114,7 +114,7 @@ digraph s1{
 }
 ```
 2. 将扫描器作为语法分析器的子程序来调用
-```dot{engine="twopi"}
+```dot
 digraph s1{
     syntax_analyzer -> scanner -> syntax_analyzer
     source -> scanner
@@ -159,7 +159,10 @@ m:小数位数变量
     读到小数点后，每当读入小数数字d时，m=m+1
 e:指数的符号变量（+为1，-为-1）
 t:类型变量(整型为0，实型为1)
-Result: $num= n*10^{e*p-m}$
+Result: 
+```tex
+num= n*10^{e*p-m}
+```
 ![avatar](images/translator.png)
 2. 每个结点的功能
 q1: Initialization,n=p=m=t=0;e=1;num=0;
@@ -200,39 +203,39 @@ con2(yes)->op6->ed
 以算术表达式为例
 
 自底向上方法的关键是如何确定当前句子的句柄
-##递归子程序
-###递归子程序的规则
+## 递归子程序
+### 递归子程序的规则
 1. 对于每个非终结符都设定一个子程序，用来识别它定义的符号串
 2. 每个子程序以相应的非终结符命名
 3. 子程序的内容由产生式右部组成
 
 
-    ```flow
-    st=>start: 入口
-    ed=>end: 出口
-    a=>condition: a?
-    b=>condition: b?
-    e=>condition: e?
-    c=>condition: c?
-    e1=>inputoutput: err1
-    e2=>inputoutput: err2
-    n1=>operation: NEXT(w)
-    n2=>operation: NEXT(w)
-    n3=>operation: NEXT(w)
-    n4=>operation: NEXT(w)
-    A=>subroutine: A
-    B=>subroutine: B
-    D=>subroutine: D
-    st->a
-    a(yes)->n1->B->e
-    e(yes)->n2->D->ed
-    e(no)->e1
-    a(no)->b
-    b(yes)->n3->A->c
-    c(yes)->n4->ed
-    c(no)->e2
-    b(no)->ed
-    ```
+```flow
+st=>start: 入口
+ed=>end: 出口
+a=>condition: a?
+b=>condition: b?
+e=>condition: e?
+c=>condition: c?
+e1=>inputoutput: err1
+e2=>inputoutput: err2
+n1=>operation: NEXT(w)
+n2=>operation: NEXT(w)
+n3=>operation: NEXT(w)
+n4=>operation: NEXT(w)
+A=>subroutine: A
+B=>subroutine: B
+D=>subroutine: D
+st->a
+a(yes)->n1->B->e
+e(yes)->n2->D->ed
+e(no)->e1
+a(no)->b
+b(yes)->n3->A->c
+c(yes)->n4->ed
+c(no)->e2
+b(no)->ed
+```
 
 ![递归子程序](images/example1.png)
 
@@ -287,7 +290,6 @@ digraph d{
 }
 ```
 
-=======
 
 ## LL(1)分析法
 * 第一个L代表从左向右
@@ -305,11 +307,14 @@ digraph d{
  Z -> dAZ | bAc
  A -> aA |ε
 
-处理字符串 $\alpha=bac\#$
+处理字符串 
+```tex
+\alpha=bac\#
+```
 
 
-分析栈|当前符号|剩下的符号|选择产生式或者匹配
------|--------|---------|---------
+|分析栈|当前符号|剩下的符号|选择产生式或者匹配
+|-----|--------|---------|---------
 |#Z  |b       |ac#      |Z->bAc
 |#cAb|b       |ac#      |b被匹配到
 |#cA |a       |c#       |A->aA
@@ -324,7 +329,11 @@ digraph d{
 
 ### LL(1)分析算法
 1. 若 栈顶符=A,当前符 w=a, 设有产生式：                     
-          A->aα，  则  POP,PUSH$(aα)^R$ ; R代表逆向 
+          A->aα，  则  POP,PUSH
+```tex
+(aα)^R
+``` 
+; R代表逆向 
 2. 若 栈顶符=a,当前符 w=a； 则  POP,NEXT(w);
 
 ## LL(1)文法
@@ -332,11 +341,14 @@ digraph d{
 1. first follow和select
 first(a)是从a能推导出的所有首符号
 2. follow(A)是所有句型中紧跟在A之后出现的终结符。
-3. $$select(A \rightarrow a)=
+3. 
+```tex
+select(A \rightarrow a)=
 \begin{cases}
 first(\alpha) & \alpha \nRightarrow ^ *\varepsilon \\
 first(\alpha)\cup follow(\alpha)& \alpha\Rightarrow^*\varepsilon
-\end{cases}$$
+\end{cases}
+```
     * 如果产生式右侧有终结符号，则肯定为第一种情况
     * 如果产生式右侧只含有非终结符号，才有可能为第二种情况
 4. 若 α=ε  则 first(α)={ }；
@@ -391,7 +403,11 @@ k：下一个读的单词数量
 2. 扩展文法
 3. LR(0)项分类
 * 规约项目： A->a· 产生式的右部已经分析完
-* 移进项目：$A\rightarrow \alpha·ab$ 期待移进一个符号a
+* 移进项目：
+```tex
+A\rightarrow \alpha·ab
+```
+期待移进一个符号a
 * 待约项目：A->a·Bb 期待归约得到B
 * 接受项目： S'->S· 整个句子分析完毕
 4. DFA的状态：多个LR(0)项目工程一个识别器的状态
@@ -420,7 +436,10 @@ LR(0)控制器加上LR分析表
 
 ## 四元式设计
 1. 表达式
-基本形式: $q:(\omega\  o1\  o2\  t)$
+基本形式: 
+```tex
+q:(\omega\  o1\  o2\  t)
+```
 2. 
 3.
 4.
@@ -454,6 +473,7 @@ q3:while尾（兼循环转向E）四元式 we=while end
 2. 与机器有关的优化（目标代码级上的优化）
     1. 寄存器分配的优化
     2. 消除无用代码
+
 ## 局部优化
 ### 常见的局部优化方法
 1. 常值表达式节省（常数合并）
@@ -469,6 +489,7 @@ q3:while尾（兼循环转向E）四元式 we=while end
     如i=1;while(i<100){x=(k+a)/i;...;i++}
 5. 消减运算强度（循环优化之二）
     把运算强度大的运算换算成强度小的运算
+
 ### 基本块及其划分
 局部优化算法以基本块为单位进行
 基本块是程序中一段顺序执行的语句序列，只有一个入口和一个出口
@@ -479,6 +500,7 @@ q3:while尾（兼循环转向E）四元式 we=while end
     1. 下一个入口语句的前导语句
     2. 转向语句
     3. 停语句
+
 ### 优化的基本内容
 1. 常值表达式节省
     1. 先计算出常值的值
@@ -489,6 +511,7 @@ q3:while尾（兼循环转向E）四元式 we=while end
 3. 删除无用赋值
     1. 确认一个变量两个赋值点间无引用点
     2. 前一赋值点为无用赋值
+
 ### 基于DAG的局部优化方法
 DAG是指无环有向图，所有箭头都向下。这里用来对基本块内的四元式序列进行优化
 1. DAG的结点内容及其表示
@@ -534,6 +557,7 @@ digraph g{
 * 算术运算
  ADD Ri,Rj/M
 * 关系逻辑运算
+
 ### 活跃变量与非活跃变量
 1. 变量的定义点和应用点
 四元式 q(omega B C A) BC的应用点q，A的定义点q
@@ -557,11 +581,13 @@ digraph g{
     2. 选空闲者 从空闲寄存器中选一Ri
     并把A填入Ri的描述表中
     3. 强迫释放 剥夺一个Ri，具体处理办法同规则1
+
 ### 目标代码生成问题
 目标代码生成是以基本块为单位的，在生成目标代码时要注意如下三个问题：
 1. 基本块开始时所有寄存器应是空闲的；基本块结束时应释放所占用的寄存器
 2. 一个变量被赋值时，要分配一个寄存器保留其值，并且要填写相应的描述表
 3. 为了生成高效的目标代码，生成算法中要引用寄存器的分配原则和变量的活跃信息
+
 ## 一个简单代码生成器设计
 1. 生成环境
 * 虚拟机
