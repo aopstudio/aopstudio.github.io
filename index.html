@@ -48,7 +48,30 @@
         </p>
     </div>-->
 
-    <div class="jumbotron text-center" style="padding: 0; margin: 0;">
+    <div class="navbar navbar-default" style="margin-bottom:0">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a href="https://aopstudio.github.io" class="navbar-brand">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="col-md-3"><a href="/">文章</a></li>
+                    <li class="col-md-3"><a href="smalltalk.html">微语</a></li>
+                    <li class="col-md-3"><a href="message.html">留言</a></li>
+                    <li class="col-md-3"><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="jumbotron text-center" style="padding: 0; margin-top:0 ">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -83,28 +106,7 @@
     </div>
         
 
-    <div class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                        
-                </button>
-                <a href="https://aopstudio.github.io" class="navbar-brand">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="col-md-3"><a href="/">文章</a></li>
-                    <li class="col-md-3"><a href="smalltalk.html">微语</a></li>
-                    <li class="col-md-3"><a href="message.html">留言</a></li>
-                    <li class="col-md-3"><a href="about.html">关于</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    
 
     <!--
     <div class="banner">
@@ -223,33 +225,81 @@
 
     
 
-    <div class="text-center">
-        <ul class="pagination">
-            <li><a href="#">上一页</a></li>
-            <li class="active"><a href="/">1</a></li>
-            <li><a href="2">2</a></li>
-            <li><a href="#">下一页</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-wrap">
-        <div class="footer w1000">
-            <div class="qrcode">
-                <img src="res/img/blog.png" style="width:200px">
+        <div class="text-center">
+            <ul class="pagination">
+                <li><a href="#">上一页</a></li>
+                <li class="active"><a href="/">1</a></li>
+                <li><a href="2">2</a></li>
+                <li><a href="#">下一页</a></li>
+            </ul>
+        </div>
+        <footer class="footer navbar-fixed-bottom ">
+            
+            <div class="col-sm-5" style="padding-left:0">
+                
+                <div class="list-group">
+                    <div class="list-group-item active">
+                        <h4 class="title">我的联系方式</h4>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="list-group-item-heading">
+                            <h4>微信公众号</h4>
+                        </div>
+                        <div class="list-group-item-text">
+                            程艺的编程之路
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="list-group-item-heading">
+                            <h4>动态博客</h4>
+                        </div>
+                        <div class="list-group-item-text">
+                            <a href="http://neusoftware.top/solo">程艺的个人博客</a>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="list-group-item-heading">
+                            <h4>黑客派账号</h4>
+                        </div>
+                        <div class="list-group-item-text">
+                            <a href="https://hacpai.com/member/aopstudio">aopstudio</a> 
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="list-group-item-heading">
+                            <h4>Bilibili账号</h4>
+                        </div>
+                        <div class="list-group-item-text">
+                            <a href="https://space.bilibili.com/14938115">微软索尼任天堂</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="practice-mode">
-                <div class="text">
-                    <h4 class="title">我的联系方式</h4>
-                    <p>微信公众号<span class="WeChat">程艺的编程之路</span></p>
-                    <p>动态博客<span class="email"><a href="http://neusoftware.top/solo">程艺的个人博客</a></span></p>
-                    <p>黑客派账号<span class="hacpai">aopstudio</span></p>
-                    <p>Bilibili账号<span class="bilibili">微软索尼任天堂</span></p>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-4 text-center">
+                <img src="res/img/weixin.jpg" alt="blog">
+                
+            </div>
+        </footer>
+        <!--
+        <div class="footer-wrap">
+            <div class="footer w1000">
+                <div class="qrcode">
+                    <img src="res/img/blog.png" style="width:200px">
+                </div>
+                <div class="practice-mode">
+                    <div class="text">
+                        <h4 class="title">我的联系方式</h4>
+                        <p>微信公众号<span class="WeChat">程艺的编程之路</span></p>
+                        <p>动态博客<span class="email"><a href="http://neusoftware.top/solo">程艺的个人博客</a></span></p>
+                        <p>黑客派账号<span class="hacpai">aopstudio</span></p>
+                        <p>Bilibili账号<span class="bilibili">微软索尼任天堂</span></p>
+                    </div>
                 </div>
             </div>
         </div>
-	
+        -->
     </div>
-   </div>
 	<div class="container">
         <div id="gitalk-container"></div>
         <script>
