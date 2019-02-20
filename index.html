@@ -21,7 +21,7 @@
 </head>
 <body>
     <!-- particles.js container -->
-    <div id="particles-js" style="z-index:-1"></div>
+    <div id="particles-js"></div>
 
     <script src="https://cdn.bootcss.com/particles.js/2.0.0/particles.js"></script>
     <script src="js/app.js"></script>
@@ -29,7 +29,8 @@
     <!--站点主要内容-->
 
     <!--导航栏-->
-    <div class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+        
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -40,20 +41,25 @@
                 <a href="https://aopstudio.github.io" class="navbar-brand">
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 </a>
+
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="col-md-3"><a href="/">文章</a></li>
                     <li class="col-md-3"><a href="smalltalk.html">微语</a></li>
                     <li class="col-md-3"><a href="message.html">留言</a></li>
-                    <li class="col-md-3"><a href="about.html">关于</a></li>
+                    <li class="col-md-3"><a href="about.html">关于</a></li> 
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="day">日间模式</a></li>
+                    <li><a id="night">夜间模式</a></li>
                 </ul>
             </div>
         </div>
     </div>
-
+    <script src="js/dayornight.js"></script>
+    
     <div class="container">
-
         <!--页首图-->
         <div class="jumbotron text-center" style="margin-top: 70px; padding: 0">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
