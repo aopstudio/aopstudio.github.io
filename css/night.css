@@ -1,0 +1,26 @@
+#particles-js {
+    background-color:rgb(0, 0, 0);
+}
+
+.panel, .panel-footer{
+    background-color:rgb(0, 0, 0);
+}
+
+.panel-footer>.small {
+    color: azure;
+  }
+  
+.list-group-item , a.list-group-item{
+background-color:rgb(0, 0, 0);
+color: aliceblue;
+}
+
+#gitalk-container {
+background-color:rgb(0, 0, 0);
+color: aliceblue;
+}
+
+.pagination>li>a {
+background-color:rgb(0, 0, 0);
+color: aliceblue;
+}
