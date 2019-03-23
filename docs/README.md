@@ -1320,3 +1320,524 @@ First-fit和Best-fit通常比Worst-fit好</font>
 
 ##### 如何减少碎片
 使用非连续分配
+
+## Storage management 2
+非连续分配
+
+### Paging 分页
+#### 基本做法
+- 把物理内存分为大小相等的块，称为**Frame（帧）**
+- 把逻辑内存分为大小相等的块，称为**Page（页）** 页的大小和帧相同
+- 追踪所有空闲帧，必要时可以找到n个空闲帧加载进程
+- 建立 **Page table（页表）** 记录Page和Frame的映射 页表的数据列只有一列
+
+#### Address translation scheme
+CPU产生的地址被分为
+- Page number(p)
+- Page offset(d)
+
+#### 分页的特点
+* 清楚划分物理地址和逻辑地址
+* 动态重定位
+* 没有外部碎片，但会有一些内部碎片（最后一页）
+* Page大小通常在4KB-8KB
+
+#### 页表的实现
+页表保存在主存中
+- Page-table base register(PTBR)指向页表起始
+- Page-table length register(PRLR)指明页表大小
+ 
+
+每次数据访问需要两次访问内存
+- 一次为页表
+- 一次为数据
+
+##### 如何优化内存访问
+* 使用TLB，一种支持并行搜索的高速硬件
+先在TLB里面查，如果页号在里面，就取出相应的帧号，如果不在再去内存的页表找
+
+![TLB](https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=354cef9bfd1f4134f43a0d2c4476feaf/dcc451da81cb39db25af152ed0160924ab18305e.jpg)
+
+**hit ratio 命中率**
+**EAT(effective access time)**
+
+#### 内存保护
+有效无效位  
+页是否在进程的地址空间内
+
+#### 页表结构
+* Hierarchical page tables
+* Hashed page tables
+* Inverted page tables
+
+##### Hierarchical page tables
+页表太大，不想连续存放
+可以分为二级页表    相当于二维数组
+
+##### Inverted page table
+系统里只有一张页表  只有真正使用的才被记录
+
+### Segmentation 分段
+#### 基本做法
+分为大小不同的段，用来存一组相对完整的逻辑信息  
+逻辑地址包含 **<段号，偏移>**
+
+#### Segment table 段表
+* Segment-table base register(STBR) 指向段表起始位置  
+* Segment-table length register(STLR) 指明段数量
+
+将二维逻辑地址转为一维物理地址
+- Base: 段起始空间
+- Limit: 段长度
+
+#### 优点
+分享代码或数据
+
+![段表1](https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=6522c6845b3d26973ade000f3492d99e/bd315c6034a85edf487f056d43540923dc547589.jpg)
+
+![段表2](https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=c07910ba5bda81cb5aeb8b9f330fbb73/d6ca7bcb0a46f21fd31ea61dfc246b600c33ae52.jpg)
+
+## Storage mangement 3
+### Virtual memory 虚拟内存
+将用户逻辑内存从物理内存分离
+- 只有部分程序需要在内存中执行
+- 因此逻辑内存空间可以比内存空间大很多
+- 允许地址空间被多个进程共享
+
+通过需求分页来实现
+
+### Demand paging 需求分页
+当需要的时候才把页放入内存
+
+### Valid-Invalid bit
+1:页在内存  0:页不在内存  
+初始都为0
+
+现在页表的数据列变为了两列
+
+### Page fault 页错误
+地址不在内存，操作系统接管，在磁盘空间查找，找到后放回内存，回到页表修改
+
+如果主存没有空闲帧，则使用**Page replacement  页置换**
+
+### 虚拟内存的好处
+- Copy-on-Write
+- Memory-Mapped Files
+
+#### Copy-on-Write
+**COW**允许父进程和子进程共享同样的资源
+- 当共享的页需要修改时，则复制一份
+
+#### Memory-Mapped Files
+可以像内存访问一样读取文件
+
+### Page replacement 页置换
+#### 过程
+1. 在磁盘上找到需要的页的位置
+2. 在内存上找到空闲帧
+3. 如果没有，放一个牺牲帧到磁盘
+4. 将页放入空闲帧，更新页表
+
+使用**modify(dirty) bit**标识帧在取出磁盘后是否被修改
+
+页错误率    $0\leq p\leq 1$
+
+平均访问时间
+```c
+EAT=(1-p)*memory access  
+    +p(page fault interrupt  
+       +swap page out  
+       +swap page in  
+       +restart the process)  
+```
+
+### 一个典型页表的记录值包括
+* Page frame number
+* Present/absent bit
+* Protection bit
+* Modified bit
+* Referenced bit
+* Caching disabled bit
+
+会有空余部分，因为页表是按字节分配的
+
+### 页置换算法
+目标：更低的页错误率  
+评估方法：通过一个特定的页置换顺序(reference string)来评估
+
+#### FIFO Algorithm
+先进先出
+
+##### 范例
+假设最小物理块数为3块。页面引用序列如下：   
+7，0，1，2，0，3，0，4，2，3，0，3，2，1，2，0，1，7，0，1
+
+![FIFO](https://s2.ax1x.com/2019/03/23/AGLqKA.png)
+
+**<font color=red>注意最开始还未填满时也算作页错误</font>**
+
+#### Optimal Algorithm 最优算法
+替换未来最长时间内不会被用到的页
+
+理论上可以达到最低的页错误率
+实际上无法做到，只是一个理论参考，因为不知道未来的情况
+
+##### 范例
+假定系统为某进程分配了三个物理块， 并考虑有以下的页面号引用串： 
+7，0，1，2，0，3，0，4，2，3，0，3，2，1，2，0，1，7，0，1 
+进程运行时，先将7，0，1三个页面装入内存。以后，当进程要访问页面2时，将会产生缺页中断。此时OS根据最佳置换算法，将选择页面7予以淘汰。
+
+![OPT](https://s2.ax1x.com/2019/03/23/AGO92Q.png)
+
+#### Least Recently Used (LRU)
+过去一段时间内未访问过的页面，在最近的将来可能也不会被访问  
+因此替换过去最长时间内没被用到的页
+
+两种实现方法
+* Counter计数器实现
+* Stack栈结构实现
+
+##### 栈实现方法
+可利用一个特殊的栈来保存当前使用的各个页面的页面号。每当进程访问某页面时，便将该页面的页面号从栈中移出，将它再压入栈顶。即栈顶始终是最新被访问页面的编号，而栈底则是最近最久未使用页面的页面号
+
+![LRU](https://s2.ax1x.com/2019/03/23/AGOCvj.png)
+
+对应，每个页面进入后的栈（栈的深度与物理块数量一致）
+![LRU Stack](https://s2.ax1x.com/2019/03/23/AGOSPS.png)
+
+#### LRU近似算法
+使用reference bit  
+被引用过设为1，没被引用过设为0
+
+每次置换reference bit为0的
+
+
+
+#### Clock置换算法（也称NRU算法）
+为每页设置一位访问位，再将内存中的所有页面都通过链接指针链接成一个循环队列。当某页被访问时，其访问位被置1。在选择页面淘汰时，只需检查页的访问位，如果是0，就选择该页换出；若为1，则重新将它置为0，暂时不换出，而给该页第二次驻留内存的机会，再按照FIFO算法检查下一个页面。当检查到队列中的最后一个页面时，若其访问位仍为1，则再返回到队首去检查第一个页面。由于该算法是循环地检查各页面的使用情况，故称为Clock算法。
+
+![Clock](https://s2.ax1x.com/2019/03/23/AGOp8g.jpg)
+
+#### 改进型Clock置换算法：
+由访问位A和修改位M可以组合成下面四种类型的页面：   
+1. (A=0, M=0)：表示该页最近既未被访问，又未被修改，是最佳淘汰页   
+2. (A=0, M=1)：表示该页最近未被访问，但已被修改，并不是很好的淘汰页   
+3. (A=1, M=0)：最近已被访问，但未被修改，该页有可能再被访问  
+4. (A=1, M=1)：最近已被访问且被修改，该页可能再被访问
+
+#### 另一种版本的说法
+>#### Second-Chance Page-Replacement 二次机会法 (也称CLOCK算法)
+>有一个时钟顺序，如果轮到要置换的页的reference bit为1，则
+>1. 设reference bit为0
+>2. 把该页留在内存
+>3. 查找下一个reference bit为0的进行替换
+
+>注：各种资料对于Clock算法、二次机会法、NRU算法分类不统一，以Clock算法也称NRU算法为准
+
+#### Counting Algorithms
+用一个计数器记录页的使用次数
+- LFU(Least Frequently Used) 替换使用次数最小的
+- MFU(Most Frequently Used) 替换使用次数最多的
+
+### Thrashing 颠簸（抖动）
+内存没有足够帧  
+进程忙于交换页  
+此时CPU利用率极其低下
+
+### TLB Reach
+能从TLB访问到的内存总数
+TLB Reach=(TLB Size)*(Page Size)
+
+理想情况下，每个进程的工作集都存在TLB
+
+### Allocation of Frames
+- Fixed allocation 固定分配
+- Priority allocation 优先级分配
+
+#### 固定分配
+* 同等分配
+    100个帧分给5个进程，每个20页
+* 按比例分配
+    根据进程大小分配
+
+#### 优先级分配
+如果Pi产生页错误
+- 从自己拥有的帧里选一个替换帧 local replacement
+- 从其他低优先级的进程中得到一个替换帧 global replacement
+
+**页表里条目数量就看页数**（不知道为什么突然加了这么一句）
+
+## Storage mangagement 4
+### File system
+* 存大量数据
+* 进程停止后数据能保存
+* 多个进程可以并发访问
+
+### File
+在用户视角中，文件是最小的分配存储
+#### Attributes 属性
+* 名称
+* 标识符
+* 类型
+* 位置
+* 大小
+* 保护
+* 时间、日期和用户标识
+
+#### Operations 基本操作
+* 创建文件
+* 写文件
+* 读文件
+* 文件重定位（文件寻址）
+* 删除文件
+* 截断文件
+
+6个基本操作可以组合执行其他文件操作
+
+#### Structures
+1. 字节
+2. 记录
+3. 树
+
+#### Access methods
+* 顺序访问
+* 直接访问
+* 索引访问，在直接访问之上
+
+### 文件系统组织
+- 磁盘被分区
+    逻辑分区 CDEF
+- 文件信息保存在目录 **directory**
+    directory可以看成符号表，将文件名翻译为目录条目
+
+### Logical Structure of a directory 目录结构
+* Single-Level Directory
+* Two-Level Directory
+* Tree-Structured Directory
+* Acyclic-Graph Directory
+* General-Graph Directory
+
+#### Single-Level Directory 单级目录结构
+所有User一个目录  
+文件名要唯一
+```dot
+graph sld{
+    ROOT [shape=folder];
+    A,B,C [shape=note];
+    ROOT -- A,B,C
+}
+```
+
+#### Two-Level Directory 两级目录结构
+* 每个User一个目录
+* 当一个User需要特定文件时，只在它的目录搜索
+* 不同用户可以有相同名称的文件
+* 协作困难
+```dot
+graph tld{
+    ROOT,UserA,UserB,UserC [shape=folder];
+    a1,a2,b1,c1,c2,c3 [shape=note,label=""];
+    ROOT--UserA,UserB,UserC
+    UserA--a1,a2
+    UserB--b1
+    UserC--c1,c2,c3
+}
+```
+
+#### Tree-Structured Directory 树形目录结构（多级目录结构）
+最普遍的
+* 有一个跟
+* 每个文件都有唯一路径名
+
+```dot
+graph tsd{
+    ROOT,A,B,C,D,E [shape=folder]
+    a1,d1,b1 [shape=note,label=""]
+    ROOT--A,B,C
+    A--a1
+    B--D,b1,E
+    D--d1 
+}
+```
+
+#### Acyclic-Graph Directory 无环图
+树形目录结构可便于实现文件分类，但不便于实现文件共享，为此在树形目录结构的基础上增加一些指向同一节点的有向边
+
+父目录共享子目录和文件，但共享边不会形成环
+```dot
+digraph agd{
+    ROOT,A,B,C,D,E [shape=folder]
+    ROOT->A,B,C
+    A,B->D
+    A,C->E
+}
+```
+#### General-Graph Directory 有环图
+共享边有环
+
+会产生问题
+
+### 文件系统架构
+#### 从上到下分层
+
+层级|操作、实例
+----|----
+App, Programs |发出文件请求的代码
+Logical File System|OS最高层。保护、安全、文件名解析
+File-organization Module|逻辑块
+Basic File System|具体文件块
+I/O Control|驱动、中断
+Devices|Disk,tapes
+
+#### The On-desk structures
+包含
+- boot control block: 启动OS的信息
+- partition control block: 分区信息
+- directory structure
+- **<font color=blue>FCB(File Control Block)</font>**: 文件细节
+
+#### 目录实现 Directory Implementation
+* 线性表
+* Hash表
+    * 缩短时间
+    * 冲突
+    * 大小固定
+* 文件名存储
+    * 行内
+    * 堆内
+
+### 分配磁盘块方法
+- Contiguous allocation 连续分配
+- Linked allocation 链接分配
+- Indexed allocation 索引分配
+
+#### 连续分配
+\<起始块位置，文件长度\>
+- 简单、快速
+- 有浪费
+- 文件大小不能改变
+
+#### 链接分配
+- 离散的
+- 链表结构
+- 没有浪费
+- 不能直接访问
+
+例子
+File-Allocation Table **<font color=darkblue>FAT</font>**
+
+#### 索引分配
+每个文件都有索引快
+* 需要索引表
+* 随机访问
+* 没有外部碎片，但小文件有内部碎片
+
+### Free space management 空闲空间管理
+#### 空闲表法
+为所有空闲块建立一张空闲块标，每个空闲区对应一个空闲表项，内容包括表项序号、该空闲区第一个盘块号、该区的空闲盘块数
+
+例子  
+序号|第一个空闲块号|空闲块数
+----|------------|-------
+1   |2           |4
+2   |9           |3
+3   |15          |5
+4   |...         |...
+
+#### Bit vector 位示图法
+##### bit map 位示图
+每个块用1 bit表示
+- 如果块空闲，bit为1
+- 如果块被分配，bit为0
+
+特点
+- 简单
+- 有效找到第一个空闲块
+- 容易得到连续的空闲块 1111
+- bit map需要额外的空间
+
+#### Linked list 空闲链表法
+##### free list
+空闲块用链表的形式连接
+- 不浪费空间
+- 必须遍历list
+##### Grouping
+在第一个空闲块存n个空闲块的地址，在n个空闲块的最后一个再存n个空闲块的地址
+##### Counting
+
+## I/O System
+### I/O Device
+- Block devices 块设备
+由于信息的存取总是以数据块为单位的，所以存储信息的设备称为块设备，如硬盘，每个都有自己的地址，可寻址
+- Character devices 字符设备
+用于数据输入输出的设备为字符设备，因为其传输的基本单位是字符，如打印机，不可寻址
+
+### Device Controllers
+I/O设备有机械和电子部分
+电子部分叫controller
+
+### CPU和Controller交互
+每个controller有一些寄存器用来和CPU交互
+
+两种方案
+1. 每个controller register有端口号，CPU使用端口号访问
+2. 把所有寄存器的值导入内存，CPU访问内存
+
+### I/O设备特点
+各种各样
+
+### I/O软件目标
+* 屏蔽硬件
+* 错误处理
+* 缓存 
+
+### I/O系统基本思想
+* 抽象
+* 封装
+
+### I/O software layers
+* 中断处理
+* 设备驱动
+* 设备无关的I/O软件
+
+### Kernel I/O Subsystem
+- Scheduling
+- Buffering 缓冲
+    在设备传输时存数据
+    解决设备速度不一致
+- Caching 缓存
+    快速存储数据备份
+- Spooling
+    保存设备输出
+
+### Disk 硬盘
+磁道  
+扇区  
+
+#### 调度
+访问时间有两部分
+1. **Seek time(主要)** 磁头寻道时间
+2. Rotational latency 磁盘转到合适位置需要的时间
+
+#### 调度算法
+##### FCFS
+先来先服务
+##### SSTF
+最短寻道时间优先  
+离磁头当前位置最近的优先
+##### SCAN 扫描
+先按一个方向走完，再换另一个方向走
+##### C-SCAN
+先向一个方向，回来直接到边界，再按同一方向走
+##### C-LOOK
+先向一个方向，回来到最远的访问点，再按同一方向走
+
+#### Disk management
+低级格式化，也称物理格式化
+- 所有盘面上的扇区编好道
+
+高级格式化，也称逻辑格式化
+- 建立起文件系统
+
+#### RAID
+冗余磁盘阵列
