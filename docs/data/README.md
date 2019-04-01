@@ -461,3 +461,321 @@ O(\log_2n)
 顺序表容易实现，任何高级语言中都有数组类型；链表的操作是基于指针的，相对来讲，前者实现较为简单，这也是用户考虑的一个因素
 
 总之两种存储结构各有长短，选择哪一种由实际问题的主要因素决定。通常较稳定的线性表选择顺序存储，而频繁进行插入、删除操作的线性表（即动态性较强）适合选择链式存储
+
+## 第三章 栈和队列
+### 栈
+#### 栈的基本概念
+1. **定义**
+一种特殊的线性表，插入和删除在同一端，该端叫**栈顶（top）**，另一端叫**栈底（bottom）**
+特点：后进先出（LIFO），故也称为后进先出的线性表
+
+2. **基操**
+* InitStack(&S): 初始化一个空栈S
+* StackEmpty(S): 判断一个栈是否为空，若栈S为空则返回true，否则返回false
+* Push(&S,x): 进栈，若栈S未满，则将x加入使之成为新栈顶
+* Pop(&S,x):出栈，若栈S非空，则弹出栈顶元素，并用x返回栈顶元素
+* GetTop(S,&x): 读栈顶元素（不弹出）
+* ClearStack(&S): 销毁栈，并释放栈S所占用的存储空间（注意，符号“&”是C++特有的，用来表示引用调用，采用C语言中的指针类型“*”也可以达到传址的目的
+
+#### 栈的顺序存储结构
+1. **顺序栈的实现**
+```cpp
+#define MaxSize 50  //定义栈中元素的最大个数
+typedef struct {
+    Elemtype data[MaxSize]; //存放栈中元素
+    int top;    //栈顶指针
+} SqStack;
+```
+2. **顺序栈的基本运算**
+
+(1) 初始化
+```cpp
+void InitStack(SqStack &S) {
+    S.top=-1;   //初始化栈顶指针
+}
+```
+(2) 判栈空
+```cpp
+bool StackEmpty(SqStack S) {
+    if(S.top==-1)   //栈空
+        return true;
+    else    //不空
+        return false;
+}
+```
+(3) 进栈
+```cpp
+bool Push(SqStack &S,ElemType x) {
+    if(S.top==MaxSize-1)    //栈满，报错
+    return false;
+    S.data[++S.top]=x;  //指针先加1，再入栈
+    return true;
+}
+```
+(4) 出栈
+```cpp
+bool Pop(SqStack &S,ElemType &x) {
+    if(S.top==-1)   //栈空，报错
+        return false;
+    x=S.data[S.top--];  //先出栈，指针再减1
+    return true;
+}
+```
+(5) 读栈顶元素
+```cpp
+bool GetTop(SqStack S,ElemType &x) {
+    if(S.top==-1)   //栈空，报错
+        return false;
+    x=data[S.top];  //x记录栈顶元素
+    return true;
+}
+```
+
+注意：这里栈顶指针指向的是栈顶元素，所以进栈时的操作是S.data[++S.top]=x,出栈时的操作是x=S.data[S.top--].若栈顶指针初始化为S.top=0，即栈顶指针指向栈顶元素的下一个位置，则会有变化
+
+3. **共享栈**
+利用栈底位置相对不变的特性，可让两个顺序栈共享一个一位数据空间，将两个栈的栈底分别设置在共享空间的两端，两个栈顶向共享空间的中间延伸
+![共享栈](https://s2.ax1x.com/2019/04/01/AsvWRS.png)
+
+#### 栈的链式存储结构
+采用链式存储的栈称为**链栈**，链栈的优点是便于多个栈共享存储空间和提高其效率，且不存在栈满溢出的情况。通常采用单链表实现，并规定所有操作都是在单链表的表头进行的。这里规定链栈没有头结点，Lhead指向栈顶元素，如图  
+![链栈](https://s2.ax1x.com/2019/04/01/Asv1KJ.png)
+```cpp
+typedef struct Linknode {
+    ElemType data;  //数据域
+    struct Linknode *next;  //指针域
+} *LiStack; //栈类型定义
+```
+#### 栈的应用
+##### 检查左右括号是否匹配
+扫描，碰见左括号入栈，碰见右括号就弹栈进行比对，若为空就报错  
+结束时，如果栈不为空，则报错
+
+##### 后缀表达式求值
+扫描，碰见操作数就将它入栈，碰见运算符就弹两个操作数出栈计算后将结果入栈。结束时取出栈顶元素
+
+##### 中缀表达式转化为后缀表达式
+* 如果读到的操作数就直接输出  
+* 如果读到的是运算符
+    * 当读到的运算符优先级大于栈顶元素优先级或者栈为空时，将该运算符入栈
+    * 当读到的是")"时，不断弹出栈顶元素并输出直到栈顶元素为"("，此时弹出"("但不输出
+    * 当读到的运算符优先级小于栈顶元素优先级时，不断弹出栈顶元素并输出直到读到的运算符优先级大于栈顶元素，此时将读到的运算符入栈
+* 将输入的字符序列扫描完毕后，如果栈内还有元素，就不断弹栈输出直到栈空为止
+
+优先级如下表所示，isp是栈内优先（in stack priority)数，icp是栈外优先（in coming priority）数
+
+|操作符 |#  |(  |*, /   |+, -   |)  |
+|------|---|---|-------|-------|---|
+|isp   |0  |1  |5      |3      |6  |
+|icp   |0  |6  |4      |2      |1  |
+
+##### 栈在递归中的应用
+递归解题思路：把规模较大的问题缩小到一目了然
+
+递归包含
+* 基本状态（出口）
+* 普通状态（递归）
+
+递归运算相当于在栈内运算
+
+递归函数编写不好会导致栈溢出
+
+递归运算每增加一个数时间增长一倍
+* 优点：可读性强
+* 缺点：冗余太多
+
+用递归的条件
+* 深度不能太深
+* 可读性明显高
+* 时间在同一数量级
+
+### 队列
+#### 定义
+一种操作受限的线性表，只允许在表的一端进行插入，而在表的另一端进行删除。
+特点：**先进先出(FIFO)**，故又称先进先出的线性表
+
+#### 基操
+* InitQueue(&Q): 初始化队列，构造一个空队列Q
+* QueueEmpty(Q): 判队列空，若队列Q为空返回true，否则返回false
+* EnQueue(&Q,x): 入队，若队列Q未满，将x加入，使之成为新的队尾
+* DeQueue(&Q,x): 出队，若队列Q非空，删除队首元素，并用x返回
+* GetHead(Q,&x): 读队首元素，若队列Q非空，则将队首元素赋值给x
+
+#### 队列的顺序存储
+```cpp
+#define MaxSize 50  //定义队列中元素的最大个数
+typedef struct{
+    ElemType data[MaxSize]; //存放队列元素
+    int front, rear;    //队首指针和队尾指针
+} SqQueue;
+```
+
+* 初始状态：Q.front\==Q.rear\==0
+* 队空条件：Q.front\==Q.rear
+* 进队操作：队不满时，先送值到队尾元素，再将队尾指针加1
+* 出队操作：队不空时，先取队首元素值，再将队首指针加1
+
+队列的初始状态  
+![队列假溢出1](https://img-blog.csdn.net/20151021163440089)
+![队列假溢出2](https://img-blog.csdn.net/20151021163556035)
+
+如上图所示，rear=MaxSize并不能作为队列满的条件。最后一张图中队列仅有一个元素，但仍满足该条件，这是一种“假溢出”。这个问题需要循环队列来解决
+
+#### 循环队列
+把存储队列元素的表从逻辑上视为一个环，称为**循环队列**。当队首指针Q.front=MaxSize-1后，再前进一个位置就自动到0，这可以利用除法取余运算（%）来实现
+* 初始时：Q.front=Q.rear=0
+* 队首指针进1：Q.front=(Q.front+1)%MaxSize
+* 队尾指针进1：Q.rear=(Q.rear+1)%MaxSize
+* 队列长度：(Q.rear+MaxSize-Q.front)%MaxSize
+
+按照常规做法，队空和队满时都有Q.front==Q.rear
+
+为了区分队空还是队满的的情况，有几种处理方式
+1. 牺牲一个单元来区分队空和队满，入队时少用一个队列单元，这是一种较为普遍的做法，约定以“队首指针在队尾指针的下一位置作为队满的标志”，如图  
+![xhdl1](http://hi.csdn.net/attachment/201109/2/0_13149224442KqH.gif)
+![xhdl2](http://hi.csdn.net/attachment/201109/2/0_1314922475n9H5.gif)
+![xhdl3](http://hi.csdn.net/attachment/201109/2/0_13149224874G4d.gif)
+    * 队满条件：(Q.rear+1)%MaxSize==Q.front  
+    * 队空条件：Q.front==Q.rear
+    * 队列中元素的个数：(Q.rear+MaxSize-Q.front)%MaxSize
+2. 类型中增设表示元素个数的数据成员size
+    * 队空条件：size==0
+    * 队满条件：size==MaxSize
+    这两种情况都有Q.front\==Q.rear
+
+##### 以牺牲一个单元来判断队空队满的队列的操作代码
+1. 初始化
+```cpp
+void InitQueue(SqQueue &Q) {
+    Q.rear=Q.front=0;   //初始化队首指针和队尾指针
+}
+```
+2. 判队空
+```cpp
+bool isEmpty(SqQueue Q){
+    if(Q.rear==Q.front) //队空条件
+        return true;
+    else
+        return false;
+}
+```
+3. 入队
+```cpp
+bool EnQueue(SqQueue &Q, ElemType x){
+    if((Q.rear+1)%MaxSize==Q.front)
+        return false;   //队满
+    Q.data[Q.rear]=x;
+    Q.rear=(Q.rear+1)%MaxSize;  //队尾指针加1取模
+    return true;
+}
+```
+4. 出队
+```cpp
+bool DeQueue(SqQueue &Q,ElemType &x){
+    if(Q.rear==Q.front)
+        return false;
+    x=Q.data[Q.front];
+    Q.front=(Q.front+1)%MaxSize;
+    return true;
+}
+```
+#### 队列的链式存储
+队列的链式存储称为**链队列**，它实际上是一个同时带有队首指针和队尾指针的单链表。头指针指向队首节点，尾指针指向队尾节点，即单链表的最后一个结点（与顺序存储不同，顺序存储的尾指针指向的是最后一个结点的下标加1）
+
+带头结点的链式队列：
+![链式队列](https://s2.ax1x.com/2019/04/01/AsvrqA.jpg)
+
+```cpp
+typedef struct {    //链式队列结点
+    ElemType data;
+    struct LinkNode *next;
+} LinkNode;
+typedef struct {    //链式队列
+    LinkNode *front,*rear;  //队列的队首指针和队尾指针
+} LinkQueue;
+```
+当Q.front\==null且Q.rear\==null时，链式队列为空
+
+##### 链式队列的基操
+1. 初始化
+```cpp
+void InitQueue(LinkQueue &Q) {
+    Q.front=Q.rear=(LinkNode*)malloc(sizeof(LinkNode)); //建立头结点
+    Q.front->next=NULL; //初始为空
+}
+```
+2. 判队空
+```cpp
+bool IsEmpty(LinkQueue Q) {
+    if(Q.front==Q.rear)
+        return true;
+    else
+        return false;
+}
+```
+3. 入队
+```cpp
+void EnQueue(LinkQueue &Q,ElemType x) {
+    LinkNode *s=(LinkNode *)malloc(sizeof(LinkNode));
+    s->data=x;  
+    s->next=NULL;   //创建新结点
+    Q.rear->next=s; 
+    Q.rear=s;   //插入到队尾
+}
+```
+4. 出队
+```cpp
+bool DeQueue(LinkQueue &Q,ElemType &x) {
+    if(Q.front==Q.rear)
+        return false;   //空队
+    LinkNode *p=Q.front->next;
+    x=p->data;
+    Q.front->next=p->next;
+    if(Q.rear==p)
+        Q.rear=Q.front; //若原队列中只有一个结点，删除后变空
+    free(p);
+    return true;
+}
+```
+
+#### 双端队列
+双端队列是指允许两端对可以进行入队和出队操作的队列。其元素的逻辑结构仍是线性结构。将队列的两端分别称为**前端**和**后端**，两端都可以入队和出队
+
+输出受限的双端队列：允许在一段进行插入和删除，但在另一端只允许插入
+
+输入受限的双端队列：允许在一端进行插入和删除，但在另一端只允许删除。若限定双端队列从某个端点插入的元素只能从该端点删除，则该双端队列就蜕变为两个栈底相邻接的栈
+
+#### 队列的应用
+##### 队列在层次遍历（广度优先遍历）中的应用
+层次遍历二叉树的过程
+1. 根节点入队
+2. 若队空（所有节点都已处理完毕），则结束遍历；否则重复3.操作
+3. 队列中第一个节点出队，并访问。若其有左子，则将左子入队；若其有右子，则将右子入队，返回2.
+```dot
+graph binaryTree {
+    node[shape=circle];
+    A--B,C
+    B--D
+    C--E,F
+    D--G
+    E--H,I
+}
+```
+层次遍历二叉树的过程
+
+|序 |说明       |队内   |队外       |
+|---|----------|-------|-----------|
+|1  |A入       |A      |           |
+|2  |A出，BC入  |BC     |A         |
+|3  |B出，D入   |CD     |AB        |
+|4  |C出，EF入  |DEF    |ABC       |
+|5  |D出，G入   |EFG    |ABCD      |
+|6  |E出，HI入  |FGHI   |ABCDE     |
+|7  |F出       |GHI    |ABCDEF     |
+|8  |GHI出     |       |ABCDEFGHI  |
+
+##### 队列在计算机系统中的应用
+1. 解决主机与外部设备之间速度不匹配的问题
+    以主机和打印机之间速度不匹配的问题为例。主机输出数据给打印机打印，输出数据的速度比打印数据的速度要快得多，由于速度不匹配，若直接把输出的数据送给打印机打印显然是不行的。解决的方法是设置一个打印数据缓冲区，主机把要打印输出的数据依次写入这个缓冲区，写满后就暂停输出，转去做其他的事情。打印机就从缓冲区中按照先进先出的原则依次取出数据并打印，打印完后再向主机发出请求。主机接到请求后再向缓冲区写入打印数据。这样做既保证了打印数据的正确，又使主机提高了效率。由此可见，打印数据缓冲区中所存储的数据就是一个队列
+2. 解决由多用户引起的资源竞争问题
+    在一个带有多终端的计算机系统上，有多个用户需要CPU各自运行自己的程序，它们分别通过各自的终端向操作系统提出占用CPU的请求。操作系统通常按照每个请求在时间上的先后顺序，把它们排成一个队列，每次把CPU分配给队首请求的用户使用。当相应的程序运行结束或用完规定的时间间隔后，令其出队，再把CPU分配给新的队首请求的用户使用。这样既能满足每个用户的请求，又能使CPU正常运行
