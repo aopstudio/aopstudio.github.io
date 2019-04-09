@@ -9,7 +9,9 @@
 .panel-footer>.small {
     color: azure;
   }
-  
+li {
+	color: aliceblue;
+}
 .list-group-item , a.list-group-item{
 background-color:rgb(0, 0, 0);
 color: aliceblue;

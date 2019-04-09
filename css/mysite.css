@@ -15,11 +15,10 @@
   cursor: pointer;
 }
 
-.panel, .panel-footer{
+.panel, .panel-footer,.content{
   position: relative;
 }
 
 #gitalk-container {
   position: relative;
 }
-

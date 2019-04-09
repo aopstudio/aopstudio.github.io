@@ -1,4 +1,11 @@
-## 静态主页的目的
-* 以Markdown Preview Enhanced直接输出的HTML文件的形式保存课堂笔记，和在Visual Studio Code上的几乎没有区别。
-* 防止了不同的Markdown引擎的不同渲染效果导致网页错乱的结果。
-* 更重要的一点是，目前除了Markdown Preview Enhanced外，貌似还没有找到能够渲染出Markdown文件中DOT语言的工具。画了很多的图在这里能够原汁原味地保存下来。
+## 此网站的目的
+1. 展示学习成果
+2. 练习网页编程能力
+
+## 此网站采用的技术和插件
+* Github Pages担当了网站的运行平台
+* Bootstrap搭建了网页的整体框架
+* docsify生成了美观的笔记文档
+* particles.js产生了酷炫的粒子特效背景
+* Live-2D创造了左下角可爱的看板娘
+* Gitalk打造了强大的静态页面的评论系统
