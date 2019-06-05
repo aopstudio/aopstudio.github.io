@@ -1,11 +1,13 @@
 <!DOCTYPE html>      
 <html> 
 <head>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>        
     function loadBasic() 
     {        
-        var xmlhttp;
+        /*var xmlhttp;
         if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp=new XMLHttpRequest();
@@ -25,37 +27,36 @@
             document.getElementById("hum").innerHTML=obj.HeWeather6[0].now.hum+"%";
             document.getElementById("vis").innerHTML=obj.HeWeather6[0].now.vis+"km";
             }
-        }
+        }*/
+        var location=document.getElementById("input-location").value;
+        axios.get('https://free-api.heweather.net/s6/weather/now?location='+location+'&key=89d49e32a26d4067822c9ed361231e2d')
+        .then(function (response) {
+            document.getElementById("location").innerHTML=response.data.HeWeather6[0].basic.location;
+            document.getElementById("tmp").innerHTML=response.data.HeWeather6[0].now.tmp;
+            document.getElementById("hum").innerHTML=response.data.HeWeather6[0].now.hum+"%";
+            document.getElementById("vis").innerHTML=response.data.HeWeather6[0].now.vis+"km";
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        /*
         var location=document.getElementById("input-location").value;
         xmlhttp.open("GET","https://free-api.heweather.net/s6/weather/now?location="+location+"&key=89d49e32a26d4067822c9ed361231e2d",true);
-        xmlhttp.send();
+        xmlhttp.send();*/
     }
+    
     function loadAir() 
-    {        
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-        {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-        }
-        else
-        {// code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange=function()
-        {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-            var str=xmlhttp.responseText;
-            var obj=JSON.parse(str);
-            document.getElementById("update").innerHTML=obj.HeWeather6[0].update.loc;
-            document.getElementById("aqi").innerHTML=obj.HeWeather6[0].air_now_city.aqi;
-            
-            }
-        }
+    {       
         var location=document.getElementById("input-location").value;
-        xmlhttp.open("GET","https://free-api.heweather.net/s6/air/now?location="+location+"&key=89d49e32a26d4067822c9ed361231e2d",true);
-        xmlhttp.send();
-    }      
+        axios.get('https://free-api.heweather.net/s6/air/now?location='+location+'&key=89d49e32a26d4067822c9ed361231e2d')
+        .then(function (response) {
+            document.getElementById("update").innerHTML=response.data.HeWeather6[0].update.loc;
+            document.getElementById("aqi").innerHTML=response.data.HeWeather6[0].air_now_city.aqi;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }    
     </script>        
 </head>    
 <body>    
