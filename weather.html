@@ -1,0 +1,92 @@
+<!DOCTYPE html>      
+<html> 
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>        
+    function loadBasic() 
+    {        
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            var str=xmlhttp.responseText;
+            var obj=JSON.parse(str);
+            document.getElementById("location").innerHTML=obj.HeWeather6[0].basic.location;
+            document.getElementById("tmp").innerHTML=obj.HeWeather6[0].now.tmp;
+            document.getElementById("hum").innerHTML=obj.HeWeather6[0].now.hum+"%";
+            document.getElementById("vis").innerHTML=obj.HeWeather6[0].now.vis+"km";
+            }
+        }
+        var location=document.getElementById("input-location").value;
+        xmlhttp.open("GET","https://free-api.heweather.net/s6/weather/now?location="+location+"&key=89d49e32a26d4067822c9ed361231e2d",true);
+        xmlhttp.send();
+    }
+    function loadAir() 
+    {        
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            var str=xmlhttp.responseText;
+            var obj=JSON.parse(str);
+            document.getElementById("update").innerHTML=obj.HeWeather6[0].update.loc;
+            document.getElementById("aqi").innerHTML=obj.HeWeather6[0].air_now_city.aqi;
+            
+            }
+        }
+        var location=document.getElementById("input-location").value;
+        xmlhttp.open("GET","https://free-api.heweather.net/s6/air/now?location="+location+"&key=89d49e32a26d4067822c9ed361231e2d",true);
+        xmlhttp.send();
+    }      
+    </script>        
+</head>    
+<body>    
+
+<div class="container">
+    <div class="form-inline row">
+        <input type="text" class="form-control" placeholder="关键字" id="input-location"/>
+        <button class="btn btn-primary" onclick="loadBasic();loadAir();">搜 索</button>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>位置</th>
+            <th>温度</th>
+            <th>湿度</th>
+            <th>能见度</th>
+            <th>空气质量指数</th>
+            <th>更新时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="location"></td>
+            <td id="tmp"></td>
+            <td id="hum"></td>
+            <td id="vis"></td>
+            <td id="aqi"></td>
+            <td id="update"></td>
+        </tr>
+        </tbody>
+    </table>
+</div> 
+</body>        
+</html>
