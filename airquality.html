@@ -1,0 +1,79 @@
+<!DOCTYPE html>      
+<html> 
+<head>
+    <title>空气质量详情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head> 
+<body>    
+
+<div class="container" id="app">
+    <div class="text-center">
+        <h2>空气质量详情</h2>
+        <div class="form-inline row">
+            <input type="text" class="form-control" placeholder="城市名" id="input-location" v-model="inputlocation"/>
+            <button class="btn btn-primary" @click="loadAir()">搜 索</button>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>监测站</th>
+            <th>空气质量</th>
+            <th>空气质量指数</th>
+            <th>PM2.5</th>
+            <th>PM10</th>
+            <th>二氧化氮</th>
+            <th>二氧化硫</th>
+            <th>一氧化碳</th>
+            <th>臭氧</th>
+            <th>发布时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="data in datas">
+            <td>{{data.air_sta}}</td>
+            <td>{{data.qlty}}</td>
+            <td>{{data.aqi}}</td>
+            <td>{{data.pm25}}</td>
+            <td>{{data.pm10}}</td>
+            <td>{{data.no2}}</td>
+            <td>{{data.so2}}</td>
+            <td>{{data.co}}</td>
+            <td>{{data.o3}}</td>
+            <td>{{data.pub_time}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script> 
+var vm=new Vue({
+    el: '#app',
+    data: {
+        inputlocation:'',
+        datas:[]
+    },
+    methods: {
+        loadAir() {
+            axios.get('https://free-api.heweather.net/s6/air/now',{
+                params:{
+                    location:this.inputlocation,
+                    key:'89d49e32a26d4067822c9ed361231e2d'
+                }
+            })
+            .then((response)=> {
+                this.datas=response.data.HeWeather6[0].air_now_station;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+
+    }
+})
+</script>        
+      
+
+</body>        
+</html>
