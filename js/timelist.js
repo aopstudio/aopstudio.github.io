@@ -9,7 +9,7 @@ var vm=new Vue({
     methods: {
         loadData: function(){
             let me=this;
-            axios.get('http://localhost:8080/title')
+            axios.get('http://122.112.158.184:8080/title')
             .then(function (response){
                 me.list=response.data;
             })

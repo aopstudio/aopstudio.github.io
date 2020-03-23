@@ -41,7 +41,7 @@ var vm=new Vue({
     methods: {
         loadData: function(){
             let me=this;
-            axios.get('http://localhost:8080/info',{
+            axios.get('http://122.112.158.184:8080/info',{
                 params:{
                     headline:me.getHeadline(), 
                 }
