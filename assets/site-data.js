@@ -52,6 +52,11 @@ export const content = {
         title: "开源项目与技术写作",
         text: "参与开发一些社区项目和个人项目，在博客、B 站和公众号记录学习心得",
       },
+      {
+        date: "兴趣爱好",
+        title: "古典音乐、摄影、旅行",
+        text: "会弹一点钢琴，巴赫是我最喜欢的音乐家；使用设备：Sony α6100，Lumix S5II，Minolta Capios 130s",
+      },
     ],
     timeline: [
       {
