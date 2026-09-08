@@ -1,0 +1,14 @@
+{
+  "name": "zhedong-cen-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/site.css --minify",
+    "watch:css": "tailwindcss -i ./assets/tailwind.css -o ./assets/site.css --watch",
+    "test": "bash tests/smoke.sh"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-portfolio-accent: #278074;
+  --color-portfolio-ink: #1f292b;
+  --font-sans: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-stone-50 text-portfolio-ink font-sans; }
+  a { @apply transition-colors duration-150; }
+  a:focus-visible { @apply outline-2 outline-offset-4 outline-portfolio-accent; }
+}
