@@ -1,4 +1,5 @@
 const links = {
+  email: "mailto:cenzhedong2@126.com",
   github: "https://github.com/aopstudio",
   blog: "https://neusoftware.top",
   bilibili: "https://space.bilibili.com/14938115",
@@ -20,8 +21,8 @@ export const content = {
       switch: "EN",
       switchLabel: "切换到英文版",
       profile: "AI 应用工程师\n关注 RAG、Agent、语音技术",
-      nav: ["正在做", "经历", "项目", "论文与研究", "最新输出", "链接"],
-      sections: ["正在做", "经历", "项目", "论文与研究", "最新输出", "链接"],
+      nav: ["求职意向", "正在做", "经历", "项目", "论文与研究", "最新输出", "链接"],
+      sections: ["求职意向", "正在做", "经历", "项目", "论文与研究", "最新输出", "链接"],
       moreProjects: "更多项目在 GitHub ↗",
       moreArticles: "更多文章在博客 ↗",
       viewRepository: "查看公开仓库 ↗",
@@ -35,11 +36,15 @@ export const content = {
       name: "岑哲栋",
       secondaryName: "Zhedong Cen",
       links: [
+        { label: "✉️ 邮箱 / cenzhedong2@126.com", href: links.email },
         { label: "GitHub / aopstudio", href: links.github },
         { label: "博客 / neusoftware.top", href: links.blog },
         { label: "Bilibili / aopstudio", href: links.bilibili },
         { label: "公众号 / 程艺的编程之路" },
       ],
+    },
+    jobSearch: {
+      text: "目前正在寻找 AI 应用工程师相关机会。我希望加入一个目标明确、彼此信任的小团队，和优秀的伙伴一起把真正有意思、有价值的想法做成可用的产品。期待团队重视软件工程实践，以清晰的需求、可靠的测试、代码评审和持续迭代保障交付质量，而不是依赖临时堆人和粗放式推进。欢迎通过 cenzhedong2@126.com 与我联系，感谢您的赏识！",
     },
     currentFocus: [
       {
@@ -186,6 +191,7 @@ export const content = {
       switchLabel: "Switch to Chinese",
       profile: "AI Application Engineer\nFocused on RAG, Agents, and Speech AI",
       nav: [
+        "Opportunities",
         "Now",
         "Experience",
         "Projects",
@@ -194,6 +200,7 @@ export const content = {
         "Links",
       ],
       sections: [
+        "Opportunities",
         "Now",
         "Experience",
         "Projects",
@@ -214,11 +221,15 @@ export const content = {
       name: "Zhedong Cen",
       secondaryName: "岑哲栋",
       links: [
+        { label: "✉️ Email / cenzhedong2@126.com", href: links.email },
         { label: "GitHub / aopstudio", href: links.github },
         { label: "Blog / neusoftware.top", href: links.blog },
         { label: "Bilibili / aopstudio", href: links.bilibili },
         { label: "WeChat Official Account / Chengyi's Programming Journey" },
       ],
+    },
+    jobSearch: {
+      text: "I am currently looking for opportunities as an AI Application Engineer. I hope to join a small team with clear goals and mutual trust, working with talented people to turn genuinely interesting and valuable ideas into usable products. I value teams that take software engineering practices seriously, using clear requirements, reliable testing, code review, and continuous iteration to ensure delivery quality rather than relying on last-minute staffing and ad hoc execution. Please feel free to contact me at cenzhedong2@126.com. Thank you for your consideration!",
     },
     currentFocus: [
       {
